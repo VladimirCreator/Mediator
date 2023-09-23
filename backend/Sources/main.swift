@@ -1,3 +1,4 @@
+import Foundation
 import TelegramBotSDK
 
 fileprivate let token = readToken(from: "COMPILER_BOT_TOKEN")
