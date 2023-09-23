@@ -1,9 +1,7 @@
-import './App.css';
+import Picker from './Component/Picker';
 
 export default function App() {
     return (
-        <h1>
-            Mediator
-        </h1>
+        <Picker />
     )
 }
