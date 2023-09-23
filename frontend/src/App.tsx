@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import * as Tabs from "@radix-ui/react-tabs";
 import * as Accordion from "@radix-ui/react-tabs";
+import * as Switch from "@radix-ui/react-tabs";
+
 import Picker from 'react-mobile-picker';
 
 export default function App() {
