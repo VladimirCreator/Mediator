@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
 import * as Tabs from "@radix-ui/react-tabs";
-import * as Accordion from "@radix-ui/react-tabs";
-import * as Switch from "@radix-ui/react-tabs";
+import * as Accordion from "@radix-ui/react-accordion";
+import * as Switch from "@radix-ui/react-switch";
 
 import Picker from 'react-mobile-picker';
+
+import UISwitch from './Component/UISwitch';
 
 export default function App() {
     const [languageSelection, setLanguageSelection] = useState(
@@ -12,7 +14,17 @@ export default function App() {
             language: 'Swift'
         }
     );
-    const [inputSelection, setInputSelection] = useState('plain');
+
+    if (!true) {
+        return (
+            <UISwitch />
+        );
+    }
+    else if (true) {
+        return (
+            <UISwitch />
+        );
+    }
 
     return (
         <>
@@ -48,6 +60,26 @@ export default function App() {
                     </h1>
                 </Tabs.Content>
             </Tabs.Root>
+
+            <Accordion.Root type='single' collapsible>
+                <Accordion.Item value='stdin'>
+                    <Accordion.Header>
+                        Description
+
+                        <Accordion.Trigger asChild>
+                            <Switch.Root>
+                                <Switch.Thumb className='block w-5 aspect-square bg-red-400' />
+                            </Switch.Root>
+                        </Accordion.Trigger>
+                    </Accordion.Header>
+
+                    <Accordion.Content>
+                        <h1>
+                            asdfij
+                        </h1>
+                    </Accordion.Content>
+                </Accordion.Item>
+            </Accordion.Root>
         </>
     );
 }

@@ -2,7 +2,7 @@ import * as Switch from '@radix-ui/react-switch';
 
 import type UISwitchProp from './Prop/UISwitchProp';
 
-const UISwitch: React.FC<UISwitchProp> = (props: UISwitchProp) => {
+const UISwitch: React.FC<UISwitchProp> = (props) => {
     return (
         <Switch.Root className='w-14 h-8 group box-content
             px-0.5
