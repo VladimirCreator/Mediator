@@ -1,9 +1,8 @@
-import * as Accordion from '@radix-ui/react-accordion';
 import * as Switch from '@radix-ui/react-switch';
 
-const UISwitch: React.FC<{}> = (props) => {
-    const {  } = props;
+import type UISwitchProp from './Prop/UISwitchProp';
 
+const UISwitch: React.FC<UISwitchProp> = (props: UISwitchProp) => {
     return (
         <Switch.Root className='w-14 h-8 group box-content
             px-0.5
@@ -16,15 +15,19 @@ const UISwitch: React.FC<{}> = (props) => {
             duration-150
         '
             children={
-                <Switch.Thumb className='w-1/2 block aspect-square
+                <Switch.Thumb className='w-1/2 aspect-square
                     bg-white rounded-full
                     shadow
 
                     group-data-[state=checked]:translate-x-full
                     duration-150
                 '
+                asChild children={
+                    <div />
+                }
                 />
             }
+            {...props}
         />
     );
 };
