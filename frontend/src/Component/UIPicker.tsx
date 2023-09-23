@@ -2,8 +2,8 @@ import * as Tabs from '@radix-ui/react-tabs';
 
 import type UIPickerProp from './Prop/UIPickerProp';
 
-const UIPicker: React.FC<UIPickerProp> = (props) => {
-    const {  } = props;
+
+export default function UIPicker<N extends string, const T extends readonly N[]>({ collection: container, ...props }: UIPickerProp<N, T>) {
 
     return (
         <Tabs.Root className='flex text-blue-500
@@ -11,11 +11,10 @@ const UIPicker: React.FC<UIPickerProp> = (props) => {
             divide-solid divide-x divide-blue-500
             rounded-md
         '
-            defaultValue={undefined}
             asChild children={
                 <Tabs.List
                     children={
-                        ["plain", "file"].map(
+                        container.map(
                             (tab) => (
                                 <Tabs.Trigger className='flex-1
                                     py-1
@@ -24,7 +23,7 @@ const UIPicker: React.FC<UIPickerProp> = (props) => {
                                     data-[state=active]:bg-blue-500
                                 '
                                     key={tab}
-                                    value={tab}
+                                    value={tab?.toString()}
                                     children={tab}
                                 />
                             )
@@ -32,8 +31,7 @@ const UIPicker: React.FC<UIPickerProp> = (props) => {
                     }
                 />
             }
+            {...props}
         />
     );
 };
-
-export default UIPicker;
