@@ -14,7 +14,8 @@
 
     "dependencies": {
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "embla-carousel-react": "^8.0.0-rc14"
     },
     "devDependencies": {
         "typescript": "^5.0.2",
@@ -31,7 +32,6 @@
         "@typescript-eslint/parser": "^6.0.0",
         "@vitejs/plugin-react": "^4.0.3"
     },
-
     "type": "module",
     "name": "frontend",
     "version": "0.0.0"
