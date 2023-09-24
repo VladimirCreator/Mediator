@@ -1,10 +1,17 @@
 import {
-
+    Root
 }
 from '@radix-ui/react-tabs';
 
-export const Picker: React.FC = (prop) => {
+import type {
+    TabsProps
+}
+from '@radix-ui/react-tabs';
+
+export const Picker: React.FC<TabsProps> = (prop) => {
     return (
         null
     );
 };
+
+<Picker />
