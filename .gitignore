@@ -2,12 +2,14 @@
 
 ## Folder
 .build
+
 ## File
 Package.resolved
 
 # The Node Package Manager
 
 ## Folder
+dist
 node_modules
 
 ## File
