@@ -4,9 +4,26 @@ import {
     type SwitchProps as SwitchProp
 } from '@radix-ui/react-switch';
 
+const UIThumb: React.FC = () => {
+    return (
+        <Thumb className='w-1/2 aspect-square
+                    bg-white rounded-full
+                    shadow
+
+                    group-data-[state=checked]:translate-x-full group-data-[state=open]:translate-x-full
+                    duration-150
+                '
+            asChild children={
+                <div />
+            }
+        />
+    );
+};
+
 export const UISwitch: React.FC<SwitchProp> = (props) => {
     return (
-        <Root className='w-14 h-8 group box-content
+        <Root {...props}
+            className='w-14 h-8 group box-content
             px-0.5
             rounded-full
 
@@ -17,19 +34,8 @@ export const UISwitch: React.FC<SwitchProp> = (props) => {
             duration-150
         '
             children={
-                <Thumb className='w-1/2 aspect-square
-                    bg-white rounded-full
-                    shadow
-
-                    group-data-[state=checked]:translate-x-full group-data-[state=open]:translate-x-full
-                    duration-150
-                '
-                asChild children={
-                    <div />
-                }
-                />
+                <UIThumb />
             }
-            {...props}
         />
     );
 };
