@@ -9,9 +9,7 @@ const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UIS
     const { tabs } = props;
 
     return (
-        <Tabs.Root className='
-            space-y-2
-        '
+        <Tabs.Root className='space-y-2'
             children={
                 <>
                     <Tabs.List className='flex
