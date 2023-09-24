@@ -12,6 +12,7 @@ import UIDisclosure from './Compound Control/UIDisclosure';
 
 import { IHaveNotComeUpWithANameDontJudgeMeStrictly$0 } from '../Compound Component/IHaveNotComeUpWithANameDontJudgeMeStrictly$0';
 import { IHaveNotComeUpWithANameDontJudgeMeStrictly$1 } from '../Compound Component/IHaveNotComeUpWithANameDontJudgeMeStrictly$1';
+import { IHaveNotComeUpWithANameDontJudgeMeStrictly$2 } from '../Compound Component/IHaveNotComeUpWithANameDontJudgeMeStrictly$2';
 
 export const Main: React.FC = () => {
     const [pickerSelection, setPickerSelection] = useState(
@@ -45,20 +46,7 @@ export const Main: React.FC = () => {
 
             <IHaveNotComeUpWithANameDontJudgeMeStrictly$0 />
             <IHaveNotComeUpWithANameDontJudgeMeStrictly$1 />
-
-            <Card>
-                <UIDisclosure
-                    children={
-                        <>
-                            <input className='w-full bg-slate-200
-                        '
-                                type='text'
-                                onChange={(event) => setStdin(event.target.value)}
-                            />
-                        </>
-                    }
-                />
-            </Card>
+            <IHaveNotComeUpWithANameDontJudgeMeStrictly$2 />
         </>
     );
 }
