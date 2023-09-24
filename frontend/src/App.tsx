@@ -11,13 +11,15 @@ export default function App() {
             language: 'Swift'
         }
     );
+    const [target, setTarget] = useState('');
+    const [stdin, setStdin] = useState('');
 
     return (
         <>
             <aside className='hidden_'>
-                <p>
-                    Language: {pickerSelection.language}
-                </p>
+                <p>Language: {pickerSelection.language}</p>
+                <p>Target: {!true ? target : ''}</p>
+                <p>stdin: {stdin}</p>
             </aside>
 
             <Picker value={pickerSelection} onChange={setPickerSelection} wheelMode='normal'>
@@ -41,14 +43,16 @@ export default function App() {
                 defaultValue='Text'
                 texttab={
                     () => (
-                        <textarea className='w-full h-64'/>
+                        <textarea className='w-full h-64'
+                            onChange={(event) => setTarget(event.target.value)}
+                        />
                     )
                 }
                 filetab={
                     () => (
-                        <input className='block mx-auto
-                        '
+                        <input className='block mx-auto'
                             type='file'
+                            onChange={(event) => event.target.files?.item(0)?.text().then(text => setTarget(text))}
                         />
                     )
                 }
@@ -60,6 +64,7 @@ export default function App() {
                         <input className='w-full
                         '
                             type='text'
+                            onChange={(event) => setStdin(event.target.value)}
                         />
                     </>
                 }
