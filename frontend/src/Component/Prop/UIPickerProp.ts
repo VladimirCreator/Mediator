@@ -7,6 +7,7 @@ type UIPickerBuilder<T extends readonly string[]> = {
 }
 
 type UIPickerProp<
+    // @ts-expect-error
     Element,
     Collection extends ReadonlyArray<string>
 > = {

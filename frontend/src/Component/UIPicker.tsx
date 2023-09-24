@@ -39,6 +39,7 @@ export default function UIPicker<N extends string, const T extends readonly stri
                                     key={tab}
                                     value={tab}
                                     children={
+                                        // @ts-expect-error
                                         props[`${tab.toLowerCase()}tab`]?.call()
                                     }
                                 />

@@ -18,10 +18,11 @@ export default function App() {
     const [stdin, setStdin] = useState('');
 
     useEffect(() => {
-        if (pickerSelection.language.length === 0 || target.length === 0 || stdin.length === 0) {
+        if (pickerSelection.language.length === 0 || target.length === 0) {
             return;
         }
-        window.Telegram.WebApp.MainButton.isVisible = true;
+        // @ts-expect-error
+        window.Telegram.WebApp.MainButton.show();
     }, [pickerSelection.language, target, stdin]);
 
     return (
@@ -30,6 +31,10 @@ export default function App() {
                 <p>Language: {pickerSelection.language}</p>
                 <p>Target: {!true ? target : ''}</p>
                 <p>stdin: {stdin}</p>
+
+                <button className='text-red-500' type='button'>
+                    Send to bot
+                </button>
             </aside>
 
             <Picker value={pickerSelection} onChange={setPickerSelection} wheelMode='normal'>

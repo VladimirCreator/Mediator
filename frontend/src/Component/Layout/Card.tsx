@@ -1,4 +1,5 @@
 const Card: React.FC = (props) => {
+    // @ts-expect-error
     const { children } = props;
 
     return (
