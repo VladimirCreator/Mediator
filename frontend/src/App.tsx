@@ -66,7 +66,7 @@ export default function App() {
                     text={
                         ($0: 'text') => (
                             <Tabs.Content value={$0}>
-                                <textarea className='w-full h-64'
+                                <textarea className='w-full h-64 bg-slate-200'
                                     onChange={(event) => setTarget(event.target.value)}
                                     placeholder={$0}
                                 />
@@ -89,7 +89,7 @@ export default function App() {
                 <UIDisclosure
                     children={
                         <>
-                            <input className='w-full
+                            <input className='w-full bg-slate-200
                         '
                                 type='text'
                                 onChange={(event) => setStdin(event.target.value)}
