@@ -5,7 +5,7 @@ import {
 
 import Picker from 'react-mobile-picker';
 
-import UIPicker from './Component/UIPicker';
+import UISegmentedControl from './Component/UISegmentedControl';
 import UIDisclosure from './Component/UIDisclosure';
 
 export default function App() {
@@ -51,7 +51,7 @@ export default function App() {
                 </Picker.Column>
             </Picker>
 
-            <UIPicker
+            <UISegmentedControl
                 collection={
                     ['Text', 'File']
                 }

@@ -1,8 +1,8 @@
 import * as Tabs from '@radix-ui/react-tabs';
 
-import type UIPickerProp from './Prop/UIPickerProp';
+import type { UISegmentedControl } from './Prop/UIPickerProp';
 
-export default function UIPicker<N extends string, const T extends readonly string[]>({ collection: container, ...props }: UIPickerProp<N, T>) {
+export default function UISegmentedControl<N extends string, const T extends readonly string[]>({ collection: container, ...props }: UISegmentedControl<N, T>) {
     return (
         <Tabs.Root className='
             space-y-2
