@@ -10,6 +10,8 @@ import * as Tabs from '@radix-ui/react-tabs';
 import { UISegmentedControl } from './Control/UISegmentedControl';
 import UIDisclosure from './Compound Control/UIDisclosure';
 
+import { IHaveNotComeUpWithANameDontJudgeMeStrictly$0 } from '../Compound Component/IHaveNotComeUpWithANameDontJudgeMeStrictly$0';
+import { IHaveNotComeUpWithANameDontJudgeMeStrictly$1 } from '../Compound Component/IHaveNotComeUpWithANameDontJudgeMeStrictly$1';
 
 export const Main: React.FC = () => {
     const [pickerSelection, setPickerSelection] = useState(
@@ -41,34 +43,9 @@ export const Main: React.FC = () => {
                 </aside>
             </Card>
 
-            <Card>
-                <UISegmentedControl
-                    tabs={
-                        ['Text', 'File']
-                    }
-                    defaultValue='text'
-                    text={
-                        ($0: 'text') => (
-                            <Tabs.Content value={$0}>
-                                <textarea className='w-full h-64 bg-slate-200'
-                                    onChange={(event) => setTarget(event.target.value)}
-                                    placeholder={$0}
-                                />
-                            </Tabs.Content>
-                        )
-                    }
-                    file={
-                        ($0: 'file') => (
-                            <Tabs.Content value={$0}>
-                                <input className='block mx-auto'
-                                    type='file'
-                                    onChange={(event) => event.target.files?.item(0)?.text().then(text => setTarget(text))}
-                                />
-                            </Tabs.Content>
-                        )
-                    }
-                />
-            </Card>
+            <IHaveNotComeUpWithANameDontJudgeMeStrictly$0 />
+            <IHaveNotComeUpWithANameDontJudgeMeStrictly$1 />
+
             <Card>
                 <UIDisclosure
                     children={
