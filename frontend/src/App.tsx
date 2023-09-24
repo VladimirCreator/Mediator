@@ -5,7 +5,7 @@ import {
 
 import Picker from 'react-mobile-picker';
 
-import UISegmentedControl from './Component/UISegmentedControl';
+import { UISegmentedControl } from './Component/UISegmentedControl';
 import UIDisclosure from './Component/UIDisclosure';
 
 export default function App() {
@@ -21,7 +21,6 @@ export default function App() {
         if (pickerSelection.language.length === 0 || target.length === 0) {
             return;
         }
-        // @ts-expect-error
         window.Telegram.WebApp.MainButton.show();
     }, [pickerSelection.language, target, stdin]);
 
@@ -52,19 +51,20 @@ export default function App() {
             </Picker>
 
             <UISegmentedControl
-                collection={
+                tabs={
                     ['Text', 'File']
                 }
                 defaultValue='Text'
-                texttab={
-                    () => (
+                text={
+                    (tab: "Text") => (
                         <textarea className='w-full h-64'
                             onChange={(event) => setTarget(event.target.value)}
+                            placeholder={tab}
                         />
                     )
                 }
-                filetab={
-                    () => (
+                file={
+                    (tab: 'File') => (
                         <input className='block mx-auto'
                             type='file'
                             onChange={(event) => event.target.files?.item(0)?.text().then(text => setTarget(text))}

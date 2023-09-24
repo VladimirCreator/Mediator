@@ -1,8 +1,12 @@
 import * as Tabs from '@radix-ui/react-tabs';
 
-import type { UISegmentedControl } from './Prop/UIPickerProp';
+import type {
+    UISegmentedControlProp
+} from './Prop/UISegmentedControlProp';
 
-export default function UISegmentedControl<N extends string, const T extends readonly string[]>({ collection: container, ...props }: UISegmentedControl<N, T>) {
+const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UISegmentedControlProp<Array>) => ReturnType<typeof Tabs.Root> = (props) => {
+    const { tabs } = props;
+
     return (
         <Tabs.Root className='
             space-y-2
@@ -16,7 +20,7 @@ export default function UISegmentedControl<N extends string, const T extends rea
                             rounded-md
                         '
                         children={
-                            container.map(
+                            tabs.map(
                                 (tab) => (
                                     <Tabs.Trigger className='flex-1
                                             py-1
@@ -33,17 +37,17 @@ export default function UISegmentedControl<N extends string, const T extends rea
                         }
                     />
                     {
-                        container.map(
-                            (tab) => (
-                                <Tabs.Content
-                                    key={tab}
-                                    value={tab}
-                                    children={
-                                        // @ts-expect-error
-                                        props[`${tab.toLowerCase()}tab`]?.call()
-                                    }
-                                />
-                            )
+                        tabs.map(
+                            (tab) => {
+                                const key = tab.toLowerCase();
+
+                                if (key in props) {
+                                    return props[key as keyof typeof props]?.call(tab)
+                                }
+                                else {
+                                    return null;
+                                }
+                            }
                         )
                     }
                 </>
@@ -51,4 +55,8 @@ export default function UISegmentedControl<N extends string, const T extends rea
             {...props}
         />
     );
+};
+
+export {
+    UISegmentedControl
 };
