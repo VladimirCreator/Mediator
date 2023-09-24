@@ -8,8 +8,8 @@ const UISwitch: React.FC<UISwitchProp> = (props) => {
             px-0.5
             rounded-full
 
-            data-[state=unchecked]:bg-neutral-200
-            data-[state=checked]:bg-green-500
+            data-[state=unchecked]:bg-neutral-200 data-[state=closed]:bg-neutral-200
+            data-[state=checked]:bg-green-500 data-[state=open]:bg-green-500
 
             focus-visible:outline-0
             duration-150
@@ -19,7 +19,7 @@ const UISwitch: React.FC<UISwitchProp> = (props) => {
                     bg-white rounded-full
                     shadow
 
-                    group-data-[state=checked]:translate-x-full
+                    group-data-[state=checked]:translate-x-full group-data-[state=open]:translate-x-full
                     duration-150
                 '
                 asChild children={
