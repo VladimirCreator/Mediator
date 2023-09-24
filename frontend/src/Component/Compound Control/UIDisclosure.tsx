@@ -1,6 +1,6 @@
 import * as Collapsible from '@radix-ui/react-collapsible';
 
-import UISwitch from '../Control/UISwitch';
+import { UISwitch } from '../Control/UISwitch';
 
 export default function UIDisclosure({ children }: { children?: React.ReactNode }) {
     return (

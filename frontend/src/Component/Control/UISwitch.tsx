@@ -1,10 +1,12 @@
-import * as Switch from '@radix-ui/react-switch';
+import {
+    Root,
+    Thumb,
+    type SwitchProps as SwitchProp
+} from '@radix-ui/react-switch';
 
-import type UISwitchProp from '../Prop/UISwitchProp';
-
-const UISwitch: React.FC<UISwitchProp> = (props) => {
+export const UISwitch: React.FC<SwitchProp> = (props) => {
     return (
-        <Switch.Root className='w-14 h-8 group box-content
+        <Root className='w-14 h-8 group box-content
             px-0.5
             rounded-full
 
@@ -15,7 +17,7 @@ const UISwitch: React.FC<UISwitchProp> = (props) => {
             duration-150
         '
             children={
-                <Switch.Thumb className='w-1/2 aspect-square
+                <Thumb className='w-1/2 aspect-square
                     bg-white rounded-full
                     shadow
 
@@ -31,5 +33,3 @@ const UISwitch: React.FC<UISwitchProp> = (props) => {
         />
     );
 };
-
-export default UISwitch;
