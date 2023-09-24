@@ -8,15 +8,6 @@ import Picker from 'react-mobile-picker';
 import UIPicker from './Component/UIPicker';
 import UIDisclosure from './Component/UIDisclosure';
 
-function $0(a: number) {
-    const $0: number = 0;
-
-    switch (0) {
-        case 0:
-            console.log('zero')
-    }
-}
-
 export default function App() {
     const [pickerSelection, setPickerSelection] = useState(
         {

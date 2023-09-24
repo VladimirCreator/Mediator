@@ -10,6 +10,28 @@
         "target": "ES2020",
         "useDefineForClassFields": true,
 
+        /* # Type Checking
+        */
+        // "allowUnreachableCode": undefined, // Visual Studio Code should warn
+                                              // about unreachable code
+                                              // but it does not :(
+                                              // as well as `tsc`
+
+        // "allowUnusedLabels": undefined, // Visual Studio Code should warn
+                                           // about unused lables
+                                           // but it does not :(
+                                           // as well as `tsc`
+        "alwaysStrict": true,
+        //"exactOptionalPropertyTypes": , // I do not know when this property would be useful.
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+
         /* Bundler mode */
         "allowImportingTsExtensions": true,
         "jsx": "react-jsx",
@@ -17,9 +39,6 @@
         "noEmit": true,
         "resolveJsonModule": true,
 
-        /* Linting */
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
         "strict": true
     },
 
