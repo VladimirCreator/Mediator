@@ -1,6 +1,6 @@
 import type { CardProp } from "../Prop/CardProp";
 
-const Card: React.FC<CardProp> = (props) => {
+export const Card: React.FC<CardProp> = (props) => {
     const className: string = [
         props.className,
         'p-4',
@@ -15,5 +15,3 @@ const Card: React.FC<CardProp> = (props) => {
         />
     );
 };
-
-export default Card;

@@ -1,4 +1,35 @@
-<>
+import {
+    useState,
+    useEffect
+} from 'react';
+
+import { Card } from './Layout/Card';
+
+import Picker from 'react-mobile-picker';
+import * as Tabs from '@radix-ui/react-tabs';
+
+import { UISegmentedControl } from './Control/UISegmentedControl';
+import UIDisclosure from './Compound Control/UIDisclosure';
+
+export const Bot: React.FC = () => {
+
+    const [pickerSelection, setPickerSelection] = useState(
+        {
+            language: 'Swift'
+        }
+    );
+    const [target, setTarget] = useState('');
+    const [stdin, setStdin] = useState('');
+
+    useEffect(() => {
+        if (pickerSelection.language.length === 0 || target.length === 0) {
+            return;
+        }
+        //window.Telegram.WebApp.MainButton.show();
+    }, [pickerSelection.language, target, stdin]);
+
+    return (
+        <>
             <Card className='hidden'>
                 <aside>
                     <p>Language: {pickerSelection.language}</p>
@@ -69,3 +100,5 @@
                 />
             </Card>
         </>
+    );
+}
