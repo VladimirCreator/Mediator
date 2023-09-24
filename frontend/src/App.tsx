@@ -4,7 +4,10 @@ import { UISwitch } from "./Component/Control/UISwitch";
 export const App: React.FC = () => {
     if (true) {
         return (
-            <UISwitch />
+            <>
+                <UISwitch name="stdin" />
+                <button>sumbit</button>
+            </>
         );
     }
     return (

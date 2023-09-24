@@ -5,7 +5,7 @@ import type {
     UISegmentedControlProp
 } from '../Prop/UISegmentedControlProp';
 
-const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UISegmentedControlProp<Array>) => ReturnType<typeof Tabs.Root> = (props) => {
+export const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UISegmentedControlProp<Array>) => ReturnType<typeof Tabs.Root> = (props) => {
     const { tabs } = props;
 
     return (
@@ -58,8 +58,4 @@ const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UIS
             {...props}
         />
     );
-};
-
-export {
-    UISegmentedControl
 };
