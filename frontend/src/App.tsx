@@ -4,6 +4,7 @@ import {
 } from 'react';
 
 import Picker from 'react-mobile-picker';
+import * as Tabs from '@radix-ui/react-tabs';
 
 import { UISegmentedControl } from './Component/UISegmentedControl';
 import UIDisclosure from './Component/UIDisclosure';
@@ -21,14 +22,14 @@ export default function App() {
         if (pickerSelection.language.length === 0 || target.length === 0) {
             return;
         }
-        window.Telegram.WebApp.MainButton.show();
+        //window.Telegram.WebApp.MainButton.show();
     }, [pickerSelection.language, target, stdin]);
 
     return (
         <>
             <aside className='hidden_'>
                 <p>Language: {pickerSelection.language}</p>
-                <p>Target: {!true ? target : ''}</p>
+                <p>Target: {true ? target : ''}</p>
                 <p>stdin: {stdin}</p>
 
                 <button className='text-red-500' type='button'>
@@ -54,21 +55,25 @@ export default function App() {
                 tabs={
                     ['Text', 'File']
                 }
-                defaultValue='Text'
+                defaultValue='text'
                 text={
-                    (tab: "Text") => (
-                        <textarea className='w-full h-64'
-                            onChange={(event) => setTarget(event.target.value)}
-                            placeholder={tab}
-                        />
+                    ($0: 'text') => (
+                        <Tabs.Content value={$0}>
+                            <textarea className='w-full h-64'
+                                onChange={(event) => setTarget(event.target.value)}
+                                placeholder={$0}
+                            />
+                        </Tabs.Content>
                     )
                 }
                 file={
-                    (tab: 'File') => (
-                        <input className='block mx-auto'
-                            type='file'
-                            onChange={(event) => event.target.files?.item(0)?.text().then(text => setTarget(text))}
-                        />
+                    ($0: 'file') => (
+                        <Tabs.Content value={$0}>
+                            <input className='block mx-auto'
+                                type='file'
+                                onChange={(event) => event.target.files?.item(0)?.text().then(text => setTarget(text))}
+                            />
+                        </Tabs.Content>
                     )
                 }
             />

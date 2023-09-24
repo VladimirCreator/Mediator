@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 
 import type {
@@ -29,7 +30,7 @@ const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UIS
                                             data-[state=active]:bg-blue-500
                                         '
                                         key={tab}
-                                        value={tab}
+                                        value={tab.toLowerCase()}
                                         children={tab}
                                     />
                                 )
@@ -42,7 +43,11 @@ const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UIS
                                 const key = tab.toLowerCase();
 
                                 if (key in props) {
-                                    return props[key as keyof typeof props]?.call(tab)
+                                    return <Fragment key={key}>
+                                        {
+                                            props[key as keyof typeof props]?.call(tab, key)
+                                        }
+                                    </Fragment>
                                 }
                                 else {
                                     return null;

@@ -1,4 +1,6 @@
-const Card: React.FC = (props) => {
+import type { CardProp } from "../Prop/CardProp";
+
+const Card: React.FC<CardProp> = (props) => {
     const { children } = props;
 
     return (
@@ -6,6 +8,7 @@ const Card: React.FC = (props) => {
                 rounded-xl
             '
             children={children}
+            {...props}
         />
     );
 };
