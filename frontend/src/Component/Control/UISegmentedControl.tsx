@@ -3,7 +3,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 
 import type {
     UISegmentedControlProp
-} from './Prop/UISegmentedControlProp';
+} from '../Prop/UISegmentedControlProp';
 
 const UISegmentedControl: <const Array extends ReadonlyArray<string>>(props: UISegmentedControlProp<Array>) => ReturnType<typeof Tabs.Root> = (props) => {
     const { tabs } = props;

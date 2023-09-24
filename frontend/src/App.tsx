@@ -8,8 +8,8 @@ import Card from './Component/Layout/Card';
 import Picker from 'react-mobile-picker';
 import * as Tabs from '@radix-ui/react-tabs';
 
-import { UISegmentedControl } from './Component/UISegmentedControl';
-import UIDisclosure from './Component/UIDisclosure';
+import { UISegmentedControl } from './Component/Control/UISegmentedControl';
+import UIDisclosure from './Component/Compound Control/UIDisclosure';
 
 export default function App() {
     const [pickerSelection, setPickerSelection] = useState(

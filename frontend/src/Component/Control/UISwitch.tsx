@@ -1,6 +1,6 @@
 import * as Switch from '@radix-ui/react-switch';
 
-import type UISwitchProp from './Prop/UISwitchProp';
+import type UISwitchProp from '../Prop/UISwitchProp';
 
 const UISwitch: React.FC<UISwitchProp> = (props) => {
     return (
