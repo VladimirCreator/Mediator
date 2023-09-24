@@ -8,6 +8,15 @@ import Picker from 'react-mobile-picker';
 import UIPicker from './Component/UIPicker';
 import UIDisclosure from './Component/UIDisclosure';
 
+function $0(a: number) {
+    const $0: number = 0;
+
+    switch (0) {
+        case 0:
+            console.log('zero')
+    }
+}
+
 export default function App() {
     const [pickerSelection, setPickerSelection] = useState(
         {
@@ -40,7 +49,7 @@ export default function App() {
             <Picker value={pickerSelection} onChange={setPickerSelection} wheelMode='normal'>
                 <Picker.Column name={'language'}>
                     {
-                        ["Swift", "C++", "JavaScript", "TypeScript"].map(
+                        ['Swift', 'C++', 'JavaScript', 'TypeScript'].map(
                             (language) => (
                                 <Picker.Item key={language} value={language}>
                                     {language}
@@ -53,7 +62,7 @@ export default function App() {
 
             <UIPicker
                 collection={
-                    ["Text", "File"]
+                    ['Text', 'File']
                 }
                 defaultValue='Text'
                 texttab={

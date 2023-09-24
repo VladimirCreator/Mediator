@@ -1,6 +1,6 @@
 import {
     TabsProps
-} from "@radix-ui/react-tabs";
+} from '@radix-ui/react-tabs';
 
 type UIPickerBuilder<T extends readonly string[]> = {
     [K in T[number] as `${Lowercase<string & K>}tab`]: () => JSX.Element;
