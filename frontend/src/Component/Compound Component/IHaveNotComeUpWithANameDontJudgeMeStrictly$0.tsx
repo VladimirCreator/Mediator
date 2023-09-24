@@ -1,18 +1,23 @@
 import { Card } from "../Layout/Card";
+import Picker from "react-mobile-picker";
 
 // Perfectoinism kills me.
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC = () => {
     return (
-        <Card className='hidden'>
-            <aside>
-                <p>Language: {pickerSelection.language}</p>
-                <p>Target: {true ? target : ''}</p>
-                <p>stdin: {stdin}</p>
-
-                <button className='text-red-500' type='button'>
-                    Send to bot
-                </button>
-            </aside>
+        <Card>
+            <Picker value={pickerSelection} onChange={setPickerSelection} wheelMode='normal'>
+                <Picker.Column name={'language'}>
+                    {
+                        ['Swift', 'C++', 'JavaScript', 'TypeScript'].map(
+                            (language) => (
+                                <Picker.Item key={language} value={language}>
+                                    {language}
+                                </Picker.Item>
+                            )
+                        )
+                    }
+                </Picker.Column>
+            </Picker>
         </Card>
     );
 }
