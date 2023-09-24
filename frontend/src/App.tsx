@@ -26,6 +26,16 @@ export default function App() {
                     ["Text", "File"]
                 }
                 defaultValue='Text'
+                texttab={
+                    () => (
+                        <h2>asd</h2>
+                    )
+                }
+                filetab={
+                    () => (
+                        <h1>vxc</h1>
+                    )
+                }
             />
         );
     }

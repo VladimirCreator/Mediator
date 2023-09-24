@@ -3,12 +3,12 @@ import {
 } from "@radix-ui/react-tabs";
 
 type UIPickerBuilder<T extends readonly string[]> = {
-    [K in T[number] as `${Lowercase<string & K>}`]: () => JSX.Element;
+    [K in T[number] as `${Lowercase<string & K>}tab`]: () => JSX.Element;
 }
 
 type UIPickerProp<
     Element,
-    Collection extends ReadonlyArray<Element>
+    Collection extends ReadonlyArray<string>
 > = {
     collection: Collection;
     defaultValue: Collection[number];
