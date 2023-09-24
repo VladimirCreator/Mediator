@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import {
+    useState,
+    useEffect
+} from 'react';
 
 import Picker from 'react-mobile-picker';
 
@@ -13,6 +16,13 @@ export default function App() {
     );
     const [target, setTarget] = useState('');
     const [stdin, setStdin] = useState('');
+
+    useEffect(() => {
+        if (pickerSelection.language.length === 0 || target.length === 0 || stdin.length === 0) {
+            return;
+        }
+        window.Telegram.WebApp.MainButton.isVisible = true;
+    }, [pickerSelection.language, target, stdin]);
 
     return (
         <>
