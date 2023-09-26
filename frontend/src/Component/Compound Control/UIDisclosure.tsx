@@ -2,9 +2,13 @@ import * as Collapsible from '@radix-ui/react-collapsible';
 
 import { UISwitch } from '../Control/UISwitch';
 
-export default function UIDisclosure({ children }: { children?: React.ReactNode }) {
+import type { DisclosureProp } from '../Prop/DisclosureProp';
+
+const UIDisclosure: React.FC<DisclosureProp> = (props) => {
+    const { children } = props;
+
     return (
-        <Collapsible.Root>
+        <Collapsible.Root {...props}>
             <div className='flex
                 justify-between
             '>
@@ -24,3 +28,5 @@ export default function UIDisclosure({ children }: { children?: React.ReactNode 
         </Collapsible.Root>
     );
 }
+
+export { UIDisclosure };
