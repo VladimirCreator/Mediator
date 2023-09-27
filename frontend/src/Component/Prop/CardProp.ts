@@ -1,3 +1,19 @@
-type CardProp = React.HTMLAttributes<HTMLElement>; // Initially Modified: 07:5_ PM Sun 24 Sep 2023
+type CardOwnProps<
+    IntrinsicElement extends keyof React.JSX.IntrinsicElements
+> = {
+    readonly component: IntrinsicElement
+}
 
-export type { CardProp };
+type CardPropsBuilder<
+    IntrinsicElement extends keyof React.JSX.IntrinsicElements,
+    Props = React.JSX.IntrinsicElements[IntrinsicElement]
+> = {
+    readonly [Prop in keyof Props]: Props[Prop]
+}
+
+type CardProps<
+    IntrinsicElement extends keyof React.JSX.IntrinsicElements
+> = Partial<
+    CardOwnProps<IntrinsicElement>
+> & CardPropsBuilder<IntrinsicElement>
+export type { CardProps }
