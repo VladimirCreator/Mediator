@@ -1,16 +1,30 @@
+import React from 'react'
 import { List } from '@radix-ui/react-tabs';
-import type { UISegmentedControlProp } from '../Prop/UISegmentedControlProp';
+import type { SegmentedControlProps } from '../Prop/UISegmentedControlProp';
 
-export const UISegmentedControl: React.FC<UISegmentedControlProp> = (props) => {
-    return (
-        <List className='flex group
-            text-blue-500
-            border border-solid border-blue-500
-            divide-x divide-solid divide-blue-500
+export const UISegmentedControl: <
+    IntrinsicElement extends keyof React.JSX.IntrinsicElements
+>(props: SegmentedControlProps<IntrinsicElement>) => React.ReactNode = (props) => {
+    const {
+        type,
+        children,
+        ...rest
+    } = props
 
-            rounded-md
-            '
-            {...props}
-        />
-    );
-};
+    return React.createElement(
+        type ?? List,
+        Object.assign(
+            rest,
+            {
+                className: 'flex group\
+                    text-blue-500\
+                    border border-solid border-blue-500\
+                    divide-x divide-solid divide-blue-500\
+                    \
+                    rounded-md\
+                '
+            }
+        ),
+        children
+    )
+}
