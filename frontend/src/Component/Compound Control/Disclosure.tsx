@@ -4,7 +4,7 @@ import { UISwitch } from '../Control/UISwitch';
 
 import type { DisclosureProp } from '../Prop/DisclosureProp';
 
-const UIDisclosure: React.FC<DisclosureProp> = (props) => {
+const Disclosure: React.FC<DisclosureProp> = (props) => {
     const { children } = props;
 
     return (
@@ -29,4 +29,4 @@ const UIDisclosure: React.FC<DisclosureProp> = (props) => {
     );
 }
 
-export { UIDisclosure };
+export { Disclosure }

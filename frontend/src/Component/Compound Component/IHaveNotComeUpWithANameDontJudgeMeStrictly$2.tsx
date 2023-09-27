@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { Card } from "../Layout/Card";
-import { UIDisclosure } from "../Compound Control/UIDisclosure";
+import { Disclosure } from "../Compound Control/Disclosure";
 
 // Perfectoinism kills me.
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC = () => {
@@ -9,7 +9,7 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC = () => {
 
     return (
         <Card>
-            <UIDisclosure
+            <Disclosure
                 onOpenChange={handleOpenChange}
                 children={
                     <>
