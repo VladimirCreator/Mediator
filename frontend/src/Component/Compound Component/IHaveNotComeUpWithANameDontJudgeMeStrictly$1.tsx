@@ -1,10 +1,11 @@
 import { Card } from "../Layout/Card";
+//import { UISegmentedControl } from "../Control/UISegmentedControl";
 
 // Perfectoinism kills me.
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$1: React.FC = () => {
     return (
         <Card>
-            <UISegmentedControl
+            {/*<UISegmentedControl
                 tabs={
                     ['Text', 'File']
                 }
@@ -29,7 +30,7 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$1: React.FC = () => {
                         </Tabs.Content>
                     )
                 }
-            />
+            />*/}
         </Card>
     );
 }

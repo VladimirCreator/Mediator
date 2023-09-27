@@ -15,7 +15,7 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC = () => {
                     <>
                         <input ref={inputRef} className='w-full bg-slate-200'
                             type='text'
-                            onChange={(event) => setStdin(event.target.value)}
+                            //onChange={(event) => setStdin(event.target.value)}
                         />
                     </>
                 }

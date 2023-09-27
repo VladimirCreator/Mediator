@@ -1,15 +1,17 @@
 import { Fragment } from 'react';
-import { Root, List } from '@radix-ui/react-tabs';
+import { Root } from '@radix-ui/react-tabs';
 import type { PickerProp } from '../Prop/PickerProp';
 
-export const Picker: <const Array extends readonly unknown[]>(prop: PickerProp<Array>) => ReturnType<typeof Root> = (prop) => {
-    const { tags } = prop;
+export const Picker: <const Array extends readonly string[]>(prop: PickerProp<Array>) => ReturnType<typeof Root> = (prop) => {
+    const { list, tags } = prop;
 
     return (
         <Root
             className='space-y-2'
         >
-            <List children={
+
+            {
+                list({children:
                     tags.map(
                         (tag) => {
                             const component = prop[`${tag}Trigger`];
@@ -24,9 +26,9 @@ export const Picker: <const Array extends readonly unknown[]>(prop: PickerProp<A
                                 return null;
                             }
                         }
-                    )
-                }
-            />
+                    )}
+                )
+            }
 
             {
                 tags.map(

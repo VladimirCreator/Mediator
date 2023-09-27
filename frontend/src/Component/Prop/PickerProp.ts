@@ -1,9 +1,11 @@
 import type { Flat } from '../../TypeScript/Flat';
 
-import { Trigger, Content } from '@radix-ui/react-tabs';
-import type { TabsProps as TabProp } from '@radix-ui/react-tabs';
+import { List, Trigger, Content } from '@radix-ui/react-tabs';
+import type { TabsProps as TabProp, TabsListProps as TabListProp } from '@radix-ui/react-tabs';
 
 type ListBuilder<Array extends ReadonlyArray<unknown>> = {
+    list: (prop: TabListProp) => ReturnType<typeof List>;
+} & {
     [T in Array[number] as `${T&string}Trigger`]: (tag: T) => ReturnType<typeof Trigger>
 };
 

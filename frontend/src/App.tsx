@@ -2,6 +2,7 @@ import { Bot } from "./Component/Bot";
 import { UISwitch } from "./Component/Control/UISwitch";
 import { Picker } from "./Component/Compound Control/Picker";
 import { Trigger, Content } from "@radix-ui/react-tabs";
+import { UISegmentedControl } from "./Component/Control/UISegmentedControl";
 
 export const App: React.FC = () => {
     if (!true) {
@@ -19,8 +20,11 @@ export const App: React.FC = () => {
                     ]
                 }
                 defaultValue='text'
+                list={
+                    (props) => (<UISegmentedControl {...props} />)
+                }
                 textTrigger={
-                    (tag: 'text') => <Trigger value={tag}>
+                    (tag: 'text') => <Trigger className='flex-1 data-[state=active]:text-white data-[state=active]:bg-blue-500' value={tag}>
                         {tag}
                     </Trigger>
                 }
@@ -32,7 +36,7 @@ export const App: React.FC = () => {
                     </Content>
                 }
                 fileTrigger={
-                    (tag: 'file') => <Trigger value={tag}>
+                    (tag: 'file') => <Trigger className='flex-1 data-[state=active]:text-white data-[state=active]:bg-blue-500' value={tag}>
                         {tag}
                     </Trigger>
                 }

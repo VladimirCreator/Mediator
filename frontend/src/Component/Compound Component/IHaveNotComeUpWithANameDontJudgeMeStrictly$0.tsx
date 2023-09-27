@@ -5,7 +5,7 @@ import Picker from "react-mobile-picker";
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC = () => {
     return (
         <Card>
-            <Picker value={pickerSelection} onChange={setPickerSelection} wheelMode='normal'>
+            <Picker value={{l: ''}} onChange={() => {}} wheelMode='normal'>
                 <Picker.Column name={'language'}>
                     {
                         ['Swift', 'C++', 'JavaScript', 'TypeScript'].map(
