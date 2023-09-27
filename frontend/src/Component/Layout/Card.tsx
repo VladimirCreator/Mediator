@@ -1,17 +1,21 @@
-import type { CardProp } from "../Prop/CardProp";
+import React from "react"
+import type { CardProps } from "../Prop/CardProp"
 
-export const Card: React.FC<CardProp> = (props) => {
-    const className: string = [
-        props.className,
-        'p-4',
-        'bg-white',
-        'rounded-xl'
-    ].join(' ');
+export const Card: <
+    IntrinsicElement extends keyof React.JSX.IntrinsicElements
+>(props: CardProps<IntrinsicElement>) => React.ReactNode = (props) => {
+    const {
+        component: type = 'div',
+        children,
+        ...rest
+    } = props
 
-    return (
-        <section
-            {...props}
-            className={className}
-        />
+    return React.createElement(
+        type,
+        Object.assign(
+            rest,
+            { className: 'p-4 bg-white rounded-xl' }
+        ),
+        children
     );
-};
+}
