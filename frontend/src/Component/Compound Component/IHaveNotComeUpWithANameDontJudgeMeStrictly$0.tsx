@@ -2,7 +2,7 @@ import { Root, Trigger } from '@radix-ui/react-tabs'
 import Picker from 'react-mobile-picker'
 
 import { Card } from '../Layout/Card'
-import { SegmentedControl } from '../Control/SegmentedControl'
+import { SegmentedControl, Button } from '../Control/SegmentedControl'
 
 /* Variant 1
 */
@@ -37,8 +37,9 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC = () => {
                                 (language) => (
                                     <Trigger key={language}
                                         value={language}
+                                        asChild
                                     >
-                                        {language}
+                                        <Button label={language} />
                                     </Trigger>
                                 )
                             )

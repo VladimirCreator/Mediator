@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { List } from '@radix-ui/react-tabs';
 import type { SegmentedControlProps } from '../Prop/SegmentedControlProp';
+
+export const Button: React.FC<{ label: string }> = forwardRef(
+    (props, ref) => {
+        const { label } = props
+
+        return (
+            <button ref={ref} className='flex-1
+                    data-[state=active]:text-white
+                    data-[state=active]:bg-blue-500
+                '
+                type='button'
+                children={
+                    label
+                }
+                {...props}
+            />
+        )
+    }
+)
 
 export const SegmentedControl: <
     IntrinsicElement extends keyof React.JSX.IntrinsicElements
