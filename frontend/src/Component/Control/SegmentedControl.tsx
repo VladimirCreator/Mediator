@@ -1,8 +1,8 @@
 import React from 'react'
 import { List } from '@radix-ui/react-tabs';
-import type { SegmentedControlProps } from '../Prop/UISegmentedControlProp';
+import type { SegmentedControlProps } from '../Prop/SegmentedControlProp';
 
-export const UISegmentedControl: <
+export const SegmentedControl: <
     IntrinsicElement extends keyof React.JSX.IntrinsicElements
 >(props: SegmentedControlProps<IntrinsicElement>) => React.ReactNode = (props) => {
     const {
