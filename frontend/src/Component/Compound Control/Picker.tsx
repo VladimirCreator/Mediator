@@ -3,10 +3,10 @@ import { Root } from '@radix-ui/react-tabs';
 import type { PickerProp } from '../Prop/PickerProp';
 
 export const Picker: <const Array extends readonly string[]>(prop: PickerProp<Array>) => ReturnType<typeof Root> = (prop) => {
-    const { list, tags } = prop;
+    const { list, tags, onValueChange } = prop;
 
     return (
-        <Root
+        <Root onValueChange={onValueChange}
             className='space-y-2'
         >
 

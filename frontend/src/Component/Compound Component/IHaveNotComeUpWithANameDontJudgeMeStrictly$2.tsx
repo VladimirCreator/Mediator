@@ -12,12 +12,10 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC = () => {
             <Disclosure
                 onOpenChange={handleOpenChange}
                 children={
-                    <>
-                        <input ref={inputRef} className='w-full bg-slate-200'
-                            type='text'
-                            //onChange={(event) => setStdin(event.target.value)}
-                        />
-                    </>
+                    <input ref={inputRef} className='w-full bg-slate-200'
+                        type='text'
+                        //onChange={(event) => setStdin(event.target.value)}
+                    />
                 }
             />
         </Card>

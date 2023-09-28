@@ -13,7 +13,7 @@ export const Button: React.FC<{ label: string }> = forwardRef(
                 '
                 type='button'
                 children={
-                    label
+                    label.replace(/^./, label.charAt(0).toUpperCase())
                 }
                 {...props}
             />

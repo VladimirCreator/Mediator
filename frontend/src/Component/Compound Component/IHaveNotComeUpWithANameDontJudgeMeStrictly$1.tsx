@@ -1,35 +1,58 @@
-import { Card } from "../Layout/Card";
+import { Trigger, Content } from '@radix-ui/react-tabs'
+import { Card } from '../Layout/Card';
+import { Picker } from '../Compound Control/Picker'
+import { SegmentedControl, Button } from '../Control/SegmentedControl'
 
 // Perfectoinism kills me.
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$1: React.FC = () => {
     return (
         <Card>
-            {/*<UISegmentedControl
-                tabs={
-                    ['Text', 'File']
+            <Picker
+                tags={
+                    ['text', 'file']
                 }
                 defaultValue='text'
-                text={
-                    ($0: 'text') => (
-                        <Tabs.Content value={$0}>
-                            <textarea className='w-full h-64 bg-slate-200'
-                                onChange={(event) => setTarget(event.target.value)}
-                                placeholder={$0}
-                            />
-                        </Tabs.Content>
+                list={
+                    (props) => (
+                        <SegmentedControl {...props} />
                     )
                 }
-                file={
+                textTrigger={
+                    (label: 'text') => <Trigger value={label} asChild
+                        children={
+                            <Button label={label} />
+                        }
+                    />
+                }
+                fileTrigger={
+                    (label: 'file') => <Trigger value={label} asChild
+                        children={
+                            <Button label={label} />
+                        }
+                    />
+                }
+                textContent={
+                    ($0: 'text') => (
+                        <Content value={$0}>
+                            <textarea
+                                className='w-full h-64 bg-slate-200'
+                                onChange={(event) => {}}
+                                placeholder={'Your Recipe'}
+                            />
+                        </Content>
+                    )
+                }
+                fileContent={
                     ($0: 'file') => (
-                        <Tabs.Content value={$0}>
+                        <Content value={$0}>
                             <input className='block mx-auto'
                                 type='file'
-                                onChange={(event) => event.target.files?.item(0)?.text().then(text => setTarget(text))}
+                                onChange={(event) => event.target.files?.item(0)?.text().then(text => {})}
                             />
-                        </Tabs.Content>
+                        </Content>
                     )
                 }
-            />*/}
+            />
         </Card>
     );
 }
