@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { Card } from "../Layout/Card";
-import { Disclosure } from "../Compound Control/Disclosure";
+import { Card } from '../Layout/Card';
+import { Disclosure } from '../Compound Control/Disclosure';
 
 // Perfectoinism kills me.
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC = () => {

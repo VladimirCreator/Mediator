@@ -1,13 +1,13 @@
 type Language = {
     // ...
-    cpp: "C++"
+    cpp: 'C++'
 
     // ...
-    swift: "Swift"
+    swift: 'Swift'
 
     // ...
-    javascript: "javascript"
-    typescript: "typescript"
+    javascript: 'javascript'
+    typescript: 'typescript'
 
     // ...
     [language: string]: string

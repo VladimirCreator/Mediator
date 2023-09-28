@@ -1,4 +1,4 @@
-import type { Flat } from '../../TypeScript/Flat';
+import type { Flat } from '../../TypeScript/Helper/Flat';
 
 import { List, Trigger, Content } from '@radix-ui/react-tabs';
 import type { TabsProps as TabProp, TabsListProps as TabListProp } from '@radix-ui/react-tabs';

@@ -1,4 +1,4 @@
-import type { TabsListProps } from "@radix-ui/react-tabs"
+import type { TabsListProps } from '@radix-ui/react-tabs'
 
 type SegmentedControlOwnProps<
     IntrinsicElement extends keyof React.JSX.IntrinsicElements

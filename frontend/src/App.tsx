@@ -1,7 +1,7 @@
-import { Bot } from './Component/Bot'
+import { Mediator } from './Component/Mediator'
 
 export const App: React.FC = () => {
     return (
-       <Bot />
+       <Mediator />
     );
 }

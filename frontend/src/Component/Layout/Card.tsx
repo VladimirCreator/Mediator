@@ -1,5 +1,5 @@
-import React from "react"
-import type { CardProps } from "../Prop/CardProp"
+import React from 'react'
+import type { CardProps } from '../Prop/CardProp'
 
 export const Card: <
     IntrinsicElement extends keyof React.JSX.IntrinsicElements
