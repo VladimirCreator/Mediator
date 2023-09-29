@@ -1,28 +1,16 @@
-// swift-tools-version:5.9
+// swift-tools-version:5.8
 import PackageDescription
 
-let package: Package = .init(
-    name: "compiler_bot",
-    products: [
-        .executable(
-            name: "compiler_bot",
-            targets: [
-                "compiler_bot"
-            ]
-        )
-    ],
+fileprivate let package: Package = .init(
+    name: "Bot",
     dependencies: [
-        .package(
-            name: "TelegramBotSDK",
-            url: "https://github.com/zmeyc/telegram-bot-swift.git",
-            from: "2.0.0"
-        )
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.76.0")
     ],
     targets: [
         .executableTarget(
-            name: "compiler_bot",
+            name: "Bot",
             dependencies: [
-                "TelegramBotSDK"
+                .product(name: "Vapor", package: "vapor")
             ]
         )
     ]
