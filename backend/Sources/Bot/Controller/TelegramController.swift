@@ -1,6 +1,9 @@
+import Vapor
+import TelegramVaporBot
+
 internal final class TelegramController: RouteCollection {
     internal func boot(routes: RoutesBuilder) throws {
-        routes.post("telegramWebHook", use)
+        routes.post("telegramWebHook", use: telegramWebHook)
     }
 }
 

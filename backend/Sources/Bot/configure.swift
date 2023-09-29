@@ -1,3 +1,6 @@
+import Vapor
+import TelegramVaporBot
+
 internal func configure(_ application: Application) async throws -> Void {
     guard let compilerBotToken: String = Environment.get("COMPILER_BOT_TOKEN") else {
         fatalError("\(#function)")
