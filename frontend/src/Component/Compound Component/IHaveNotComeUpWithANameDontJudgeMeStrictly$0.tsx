@@ -1,8 +1,21 @@
 import { Root, Trigger } from '@radix-ui/react-tabs'
 import Picker from 'react-mobile-picker'
 
+import { Language } from '../../TypeScript/Language'
+
 import { Card } from '../Layout/Card'
 import { SegmentedControl, Button } from '../Control/SegmentedControl'
+
+const languages = [
+    Language.cpp,
+    Language.swift,
+    Language.javascript,
+    Language.typescript
+]
+
+type BetaProps = {
+    onSelectLanguage: (language: string) => void
+}
 
 /* Variant 1
 */
@@ -27,13 +40,18 @@ const Variant1: React.FC = () => {
 }
 
 // Perfectoinism kills me.
-export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC = () => {
+export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC<BetaProps> = (props) => {
+    const {
+        onSelectLanguage
+    } = props
+
     return (
         <Card component='section'>
-            <Root children={
+            <Root onValueChange={onSelectLanguage}
+                children={
                     <SegmentedControl>
                         {
-                            ['Swift', 'C++'].map(
+                            languages.map(
                                 (language) => (
                                     <Trigger key={language}
                                         value={language}
@@ -50,3 +68,5 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC = () => {
         </Card>
     )
 }
+
+export type { BetaProps }

@@ -12,8 +12,10 @@ export const Mediator: React.FC<MediatorProps> = () => {
     const [recipe, setRecipe] = useState<string|null>(null);
     const [stdin, setStdin] = useState<string|null>(null);
 
-    const isReady: boolean = language !== null && recipe !== null
+    const didSelectLanguage: boolean = language !== null
+    const didProvideRecipe: boolean = recipe !== null
 
+    // Может HTTP, а может не HTTP.
     const sendOverHTTP: () => void = () => {
         // @ts-expect-error
         const webApp = window.Telegram.WebApp
@@ -40,14 +42,20 @@ export const Mediator: React.FC<MediatorProps> = () => {
         },
         [language, recipe]
     );
+    console.log(stdin)
 
     return (
         <WebAppProvider children={
                 <>
-                    <Main />
+                    <Main
+                        onSelectLanguage={setLanguage}
+                        onChangeRecipe={setRecipe}
+                        onChangeStdin={setStdin}
+                    />
                     <MainButton
                         text='Send'
                         onClick={sendOverHTTP}
+                        disabled={!didSelectLanguage && !didProvideRecipe}
                     />
                 </>
             }
