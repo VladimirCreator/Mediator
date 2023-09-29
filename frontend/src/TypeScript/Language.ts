@@ -1,16 +1,16 @@
-type Language = {
+enum Language {
     // ...
-    cpp: 'C++'
+    cpp = 'C++',
 
     // ...
-    swift: 'Swift'
+    swift = 'Swift',
 
     // ...
-    javascript: 'javascript'
-    typescript: 'typescript'
+    javascript = 'javascript',
+    typescript = 'typescript'
 
     // ...
-    [language: string]: string
+    //[language: string]: string
 }
 
-export type { Language }
+export { Language }
