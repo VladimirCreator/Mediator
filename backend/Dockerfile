@@ -1,19 +1,19 @@
-# Initially Modified: 09:57 PM Tue 26 Sep 2023
 FROM swift as build
+WORKDIR /app
+
+COPY Package.swift .
+COPY Sources ./Sources
+
+RUN swift build --configuration release
+
+
+FROM swift as production
 
 WORKDIR /app
-COPY . .
-
-RUN swift build
-
-
-FROM alpine as production
 
 ENV COMPILER_BOT_TOKEN=
+ENV IHaveNotComeUpWithAName=
 
-WORKDIR /app
+COPY  --from=build /app/.build .
 
-COPY --from=build /app/.build/x86_64-unknown-linux-gnu/debug .
-
-RUN chmod +x /app/compiler_bot
-CMD ["/app/compiler_bot"]
+CMD ["/app/x86_64-unknown-linux-gnu/release/Bot"]
