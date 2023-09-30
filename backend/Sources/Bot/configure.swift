@@ -14,7 +14,7 @@ internal func configure(_ application: Application) async throws -> Void {
     await connection.setConnection(try await TGLongPollingConnection(bot: bot))
     try await connection.connection.start()
 
-    await messageHandler(application, connection.connection)
+    await attachHandlers(for: application, using: connection.connection)
 
     try routes(application)
 }
