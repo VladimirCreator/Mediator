@@ -7,7 +7,7 @@ internal let startHandler: TGCommandHandler = .init(commands: ["start"]) { updat
 
     let IHaveNotComeUpWithAName1: TGSendMessageParams = .init(
         chatId: .chat(IHaveNotComeUpWithAName0),
-        text: "Text",
+        text: "Мне нужно знать что мне компилировать. Нажмите на кнопку, чтобы дать мне инструкции.",
         replyMarkup: .replyKeyboardMarkup(
             .init(keyboard: tgKeyboardButton)
         )
