@@ -9,7 +9,7 @@ fileprivate enum Entrypoint {
         let application: Application = try .init(.detect()); defer { application.shutdown() }
 
         try await configure(application)
-        try application.run()
+        try await application.runFromAsyncMainEntrypoint()
     }
 }
 
