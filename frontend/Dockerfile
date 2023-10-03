@@ -1,6 +1,6 @@
 FROM node:latest as builder
 
-WORKDIR app
+WORKDIR root
 
 COPY package.json      \
      package-lock.json \
@@ -17,7 +17,7 @@ FROM nginx:latest
 
 WORKDIR app
 
-COPY --from=builder app/dist \
+COPY --from=builder root/dist \
      .
 COPY nginx.conf \
      /etc/nginx/
