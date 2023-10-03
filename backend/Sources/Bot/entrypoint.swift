@@ -12,3 +12,21 @@ fileprivate enum Entrypoint {
         try application.run()
     }
 }
+
+private extension Application {
+    static let baseExecutionQueue = DispatchQueue(label: "vapor.codes.entrypoint")
+
+    fileprivate func runFromAsyncMainEntrypoint() async throws {
+        try await withCheckedThrowingContinuation { continuation in
+            Application.baseExecutionQueue.async { [self] in
+                do {
+                    try self.run()
+                    continuation.resume()
+                }
+                catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+}
