@@ -17,28 +17,6 @@ type BetaProps = {
     onSelectLanguage: (language: string) => void
 }
 
-/* Variant 1
-*/
-const Variant1: React.FC = () => {
-    return (
-        <Card component='section'>
-            <Picker value={{l: ''}} onChange={() => {}} wheelMode='normal'>
-                <Picker.Column name={'language'}>
-                    {
-                        ['Swift', 'C++', 'JavaScript', 'TypeScript'].map(
-                            (language) => (
-                                <Picker.Item key={language} value={language}>
-                                    {language}
-                                </Picker.Item>
-                            )
-                        )
-                    }
-                </Picker.Column>
-            </Picker>
-        </Card>
-    )
-}
-
 // Perfectoinism kills me.
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC<BetaProps> = (props) => {
     const {
