@@ -1,3 +1,8 @@
+/* interface React.JSX.IntrinsicElements {
+       div: ...
+   }
+*/
+
 type CardOwnProps<
     IntrinsicElement extends keyof React.JSX.IntrinsicElements
 > = {
@@ -11,9 +16,8 @@ type CardPropsBuilder<
     readonly [Prop in keyof Props]: Props[Prop]
 }
 
-type CardProps<
-    IntrinsicElement extends keyof React.JSX.IntrinsicElements
-> = Partial<
-    CardOwnProps<IntrinsicElement>
-> & CardPropsBuilder<IntrinsicElement>
+type CardProps = {
+    [IntrinsicElement in keyof React.JSX.IntrinsicElements]:
+        CardOwnProps<IntrinsicElement> & CardPropsBuilder<IntrinsicElement>
+}[keyof React.JSX.IntrinsicElements]
 export type { CardProps }
