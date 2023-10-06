@@ -1,8 +1,29 @@
 # Mediator
-It is a bot.
+
+## Table of Contents
+- [About](#about)
+- [Getting Started](#getting-started)
+    - [Clone](#1-clone)
+    - [Prepare .env](#2-prepare-env)
+    - [Docker](#docker)
+- [Backend](#backend)
+    - [Build]()
+    - [Docker]()
+- [Frontend](#frontend)
+    - [Build]()
+    - [Docker]()
+
+## About
+This bot accepts as input these properties from a user:
+
+1. language (e.g. C++);
+1. source (e.g. `int main() { return 0; }`);
+1. arguments (e.g. `--version`);
+1. stdin (e.g. `vladimir`).
+
+It processes these properties and sends back output of a program to the user.
 
 ## Getting Started
-Убедитесь, что ваша операционная система включает в себя все необходимые зависимости.
 
 ### 1. Clone
 ```
@@ -10,22 +31,41 @@ $ git clone \
     https://github.com/VladimirCreator/compiler_bot.git
 ```
 
-[//]: <> (### Docker)
-[//]: <> (#### Deploy)
-[//]: <> ($ docker compose up --detach)
+### 2. Prepare .env
+```
+COMPILER_BOT_TOKEN=<YOUR_BOTS_TOKEN>
+IHaveNotComeUpWithAName=<YOUR_MINI_APPS_URL>
+```
+
+### 3. Docker
+```
+$ docker compose up --detach
+```
 
 ## Backend
-Обратите внимание, что для нормальной работы этой части программного обеспечения требуется указать токен бота и местоположение мини-приложения. Это можно осуществить путём изменения `.env`.
+Dockerfile installs all required dependecies like `g++`[^1], `swiftc`[^2], and `bun`[^3].
+
+[^1]: Makes possible to compile C++ files.
+[^2]: Makes possible to compile Swift files.
+[^3]: Makes possible to interpret JavaScript and TypeScript files.
+
+> **Pay Attention**\
+> For the normal operation of this part of the software, it is required to specify the bot token and the location of mini app.\
+> This can be done by changing `.env`.
 
 ### Build
 ```
 $ swift build --configuration release
 ```
 
-[//]: <> (### Docker)
-[//]: <> ($ docker run --publish 8080:80 \)
-[//]: <> (             --detach          \)
-[//]: <> (             --name $USER)
+### Docker
+```
+$ docker run --publish 8080:80 \
+             --detach          \
+             --name $USER)
+```
+> **Pay Attention**\
+> This Dockerfile is probably the worst Dockerfile.
 
 ## Frontend
 ### Build
