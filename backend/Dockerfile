@@ -1,19 +1,10 @@
-FROM swift as build
-WORKDIR /app
+FROM swift:5.9
 
-COPY Package.swift .
-COPY Sources ./Sources
+WORKDIR root
 
-RUN swift build --configuration release
+RUN apt-get install libcurl4-openssl-dev
 
+COPY .build \
+     .build
 
-FROM swift as production
-
-WORKDIR /app
-
-ENV COMPILER_BOT_TOKEN=
-ENV IHaveNotComeUpWithAName=
-
-COPY  --from=build /app/.build .
-
-CMD ["/app/x86_64-unknown-linux-gnu/release/Bot"]
+CMD [".build/x86_64-unknown-linux-gnu/release/Bot"]

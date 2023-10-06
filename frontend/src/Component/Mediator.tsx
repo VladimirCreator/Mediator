@@ -5,11 +5,11 @@ import { WebAppProvider, MainButton } from '@vkruglikov/react-telegram-web-app'
 import { Main } from './Screen/Main';
 
 import type { MediatorProps } from './Prop/MediatorProp';
-import { Language } from '../TypeScript/Language';
 
 export const Mediator: React.FC<MediatorProps> = () => {
-    const [language, setLanguage] = useState<Language|string|null>(null);
+    const [language, setLanguage] = useState<string|null>(null);
     const [recipe, setRecipe] = useState<string|null>(null);
+    const [theArguments, setArguments] = useState<string|null>(null);
     const [stdin, setStdin] = useState<string|null>(null);
 
     const didSelectLanguage: boolean = language !== null
@@ -24,6 +24,7 @@ export const Mediator: React.FC<MediatorProps> = () => {
             {
                 language,
                 recipe,
+                arguments: theArguments,
                 stdin
             }
         );
@@ -42,7 +43,6 @@ export const Mediator: React.FC<MediatorProps> = () => {
         },
         [language, recipe]
     );
-    console.log(stdin)
 
     return (
         <WebAppProvider children={
@@ -50,10 +50,11 @@ export const Mediator: React.FC<MediatorProps> = () => {
                     <Main
                         onSelectLanguage={setLanguage}
                         onChangeRecipe={setRecipe}
+                        onChangeArguments={setArguments}
                         onChangeStdin={setStdin}
                     />
                     <MainButton
-                        text='Send'
+                        text='Execute'
                         onClick={sendOverHTTP}
                         disabled={!didSelectLanguage && !didProvideRecipe}
                     />

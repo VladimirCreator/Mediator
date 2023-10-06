@@ -1,5 +1,2 @@
-type MediatorProps = {
-
-}
-
+type MediatorProps = {}
 export type { MediatorProps }

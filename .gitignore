@@ -4,7 +4,7 @@
 .build
 
 ## File
-Package.resolved
+.env
 
 # The Node Package Manager
 

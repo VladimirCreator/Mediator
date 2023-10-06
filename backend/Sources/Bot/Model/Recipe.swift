@@ -4,6 +4,7 @@
 internal struct Recipe {
     internal let language: String
     internal let text: String
+    internal let arguments: String?
     internal let stdin: String?
 }
 
@@ -11,6 +12,7 @@ extension Recipe: Decodable { // Initially Modified: 09:41 PM Sat 30 Sep 2023
     private enum JSONKeys: String, CodingKey {
         case language
         case text
+        case arguments
         case stdin
     }
 
@@ -25,6 +27,7 @@ extension Recipe: Decodable { // Initially Modified: 09:41 PM Sat 30 Sep 2023
 
         self.language = language
         self.text = text
+        self.arguments = try? values.decode(String.self, forKey: .arguments)
         self.stdin = try? values.decode(String.self, forKey: .stdin)
     }
 }

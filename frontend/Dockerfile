@@ -1,18 +1,26 @@
-# Initially Modified: 07:38 PM Tue 26 Sep 2023
-FROM node:latest as build
+FROM node:latest as builder
 
-WORKDIR /app
-COPY package.json .
-COPY package-lock.json .
+WORKDIR root
+
+COPY package.json      \
+     package-lock.json \
+     .
+
 RUN npm install
 
-COPY . .
+COPY . \
+     .
+RUN npm run build
 
 
-FROM nginx:latest as production
+FROM nginx:latest
 
-WORKDIR ./app
-COPY --from=build /app/dist/ /app
-COPY nginx.conf /etc/nginx/
+WORKDIR app
+
+COPY --from=builder root/dist \
+     .
+COPY nginx.conf \
+     /etc/nginx/
 
 CMD ["nginx", "-g", "daemon off;"]
+# Last Modified: 07:49 AM Tue 03 Oct 2023
