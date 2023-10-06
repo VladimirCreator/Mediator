@@ -24,7 +24,7 @@ export const Mediator: React.FC<MediatorProps> = () => {
             {
                 language,
                 recipe,
-                theArguments,
+                arguments: theArguments,
                 stdin
             }
         );
