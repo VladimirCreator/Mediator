@@ -27,7 +27,7 @@ extension Recipe: Decodable { // Initially Modified: 09:41 PM Sat 30 Sep 2023
 
         self.language = language
         self.text = text
-        self.text = try? values.decode(String.self, forKeyL .arguments)
+        self.arguments = try? values.decode(String.self, forKey: .arguments)
         self.stdin = try? values.decode(String.self, forKey: .stdin)
     }
 }
