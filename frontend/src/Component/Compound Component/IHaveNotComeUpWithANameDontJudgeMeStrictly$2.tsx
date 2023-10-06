@@ -1,33 +1,29 @@
 import { useRef } from 'react';
-
-import { Card } from '../Layout/Card';
 import { Disclosure } from '../Compound Control/Disclosure';
 
 type BetaProps = {
-    onChangeStdin: (stdin: string) => void
+    onChangeArguments: (stdin: string) => void
 }
 
 // Perfectoinism kills me.
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC<BetaProps> = (props) => {
     const {
-        onChangeStdin
+        onChangeArguments
     } = props
 
     const inputRef: React.MutableRefObject<HTMLInputElement|null> = useRef(null);
 
     return (
-        <Card>
-            <Disclosure
-                onOpenChange={handleOpenChange}
-                children={
-                    <input ref={inputRef} className='w-full bg-slate-200'
-                        type='text'
-                        onChange={(event) => onChangeStdin(event.target.value)}
-                    />
-                }
-            />
-        </Card>
-    );
+        <Disclosure label='arguments' className='space-y-2'
+            onOpenChange={handleOpenChange}
+            children={
+                <input ref={inputRef} className='w-full bg-slate-200 font-mono p-2 rounded'
+                    type='text'
+                    onChange={(event) => onChangeArguments(event.target.value)}
+                />
+            }
+        />
+    )
 
     function handleOpenChange(open: boolean) {
         if (open) {

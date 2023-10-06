@@ -1,32 +1,30 @@
-import * as Collapsible from '@radix-ui/react-collapsible';
+import { Root, Trigger, Content } from '@radix-ui/react-collapsible';
 
 import { UISwitch } from '../Control/UISwitch';
 
 import type { DisclosureProp } from '../Prop/DisclosureProp';
 
-const Disclosure: React.FC<DisclosureProp> = (props) => {
-    const { children } = props;
+export const Disclosure: React.FC<DisclosureProp> = (props) => {
+    const { children, label } = props;
 
     return (
-        <Collapsible.Root {...props}>
+        <Root {...props}>
             <div className='flex
                 justify-between
             '>
                 <label className='font-mono'>
-                    stdin
+                    {label}
                 </label>
-                <Collapsible.Trigger
+                <Trigger
                     asChild children={
                         <UISwitch />
                     }
                 />
             </div>
 
-            <Collapsible.Content
+            <Content
                 children={children}
             />
-        </Collapsible.Root>
-    );
+        </Root>
+    )
 }
-
-export { Disclosure }

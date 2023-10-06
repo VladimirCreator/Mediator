@@ -1,3 +1,3 @@
 import { ComponentProps } from "./ComponentProp"
 
-export type CardProps = ComponentProps;
+export type ScrollViewProps = ComponentProps
