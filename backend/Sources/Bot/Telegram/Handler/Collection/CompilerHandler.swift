@@ -30,11 +30,11 @@ fileprivate let info = [
         extension: "swift"
     ),
     "javascript": (
-        compiler: "bun", arguments: nil,
+        compiler: "bun", arguments: "elf64.js",
         extension: "js"
     ),
     "typescript": (
-        compiler: "bun", arguments: nil,
+        compiler: "bun", arguments: "elf64.ts",
         extension: "ts"
     )
 ]
@@ -47,7 +47,7 @@ internal let compileHandler: TGBaseHandler = .init() { update, bot in
     }
     guard let recipe = try? JSONDecoder().decode(SwiftWebAppData.self, from: webAppData).data else { return}
 
-    guard let `extension` = info[recipe.language],
+    guard let `extension` = info[recipe.language]?.extension,
         FileManager.default.createFile(atPath: "elf64.\(`extension`)", contents: recipe.text.data(using: .utf8))
     else {
         return
@@ -69,7 +69,7 @@ internal let compileHandler: TGBaseHandler = .init() { update, bot in
     if let data = try? Process.run("./elf64", arguments: recipe.arguments, stdin: recipe.stdin),
        let stdout = String(data: data, encoding: .utf8)
     {
-        try FileManager.default.removeItem(atPath: "./recipe")
+        try FileManager.default.removeItem(atPath: "./elf64")
 
         let params: TGSendMessageParams = .init(
             chatId: .chat(message.chat.id),

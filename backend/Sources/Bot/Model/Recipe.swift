@@ -1,8 +1,27 @@
 /* Initially Modified: 09:40 PM Sat 30 Sep 2023
 */
 
+@propertyWrapper
+internal struct Lowercased {
+    private var string: String
+
+    internal var wrappedValue: String {
+        get {
+            return string
+        }
+        set {
+            string = newValue.lowercased
+        }
+    }
+
+    init(wrappedValue: String) {
+        string = wrappedValue
+    }
+}
+
 internal struct Recipe {
-    internal let language: String
+    @Lowercased(wrappedValue: "")
+    internal var language: String
     internal let text: String
     internal let arguments: String?
     internal let stdin: String?
@@ -25,7 +44,7 @@ extension Recipe: Decodable { // Initially Modified: 09:41 PM Sat 30 Sep 2023
             fatalError("\(#function)")
         }
 
-        self.language = language
+        self._language.wrappedValue = language
         self.text = text
         self.arguments = try? values.decode(String.self, forKey: .arguments)
         self.stdin = try? values.decode(String.self, forKey: .stdin)
