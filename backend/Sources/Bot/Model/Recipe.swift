@@ -1,6 +1,20 @@
 /* Initially Modified: 09:40 PM Sat 30 Sep 2023
 */
 
+@propertyWrapper
+internal struct Lowercased {
+    private var string: String
+
+    internal var wrappedValue: String {
+        get {
+            return string
+        }
+        set {
+            string = string.lowercased
+        }
+    }
+}
+
 internal struct Recipe {
     internal let language: String
     internal let text: String
