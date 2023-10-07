@@ -1,5 +1,5 @@
 import { Root, Trigger, Content } from '@radix-ui/react-collapsible';
-import { UISwitch } from '../Control/UISwitch';
+import { Switch } from '../Control/Switch';
 
 import type { CollapsibleProps } from '@radix-ui/react-collapsible';
 
@@ -24,7 +24,7 @@ export const Disclosure: React.FC<DisclosureProps> = (props) => {
                 </label>
                 <Trigger
                     asChild children={
-                        <UISwitch />
+                        <Switch />
                     }
                 />
             </div>
