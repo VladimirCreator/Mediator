@@ -24,8 +24,8 @@ const Thumb: React.FC<ThumbProps> = (props) => {
                 '
             />
         </RadixThumb>
-    );
-};
+    )
+}
 
 export const Switch: React.FC<SwitchProps> = (props) => {
     return (
@@ -47,5 +47,5 @@ export const Switch: React.FC<SwitchProps> = (props) => {
         >
             <Thumb />
         </Root>
-    );
-};
+    )
+}

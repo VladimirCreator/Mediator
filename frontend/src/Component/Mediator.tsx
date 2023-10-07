@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react'
 import { WebAppProvider, MainButton } from '@vkruglikov/react-telegram-web-app'
 import { Main } from './Screen/Main'
 
-/* Props
+/* # Props
 */
-type MediatorProps = {}
+type MediatorProps = unknown
 
-/* Component
+/* # Component
 */
 export const Mediator: React.FC<MediatorProps> = () => {
     const [language, setLanguage]      = useState<string|null>(null)

@@ -1,9 +1,5 @@
 import { useState } from 'react'
 
-import { Root, Trigger } from '@radix-ui/react-tabs'
-
-import { SegmentedControl, Button } from '../Control/SegmentedControl'
-
 import { ScrollView } from '../Layout/ScrollView'
 import { Language } from '../Common/Language'
 
@@ -47,7 +43,7 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC<BetaProps> =
                             language={language.language}
                             onClick={
                                 () => {
-                                    onSelectLanguage(language.language);
+                                    onSelectLanguage(language.language)
                                     setSelectedLanguage(language.language)
                                 }
                             }

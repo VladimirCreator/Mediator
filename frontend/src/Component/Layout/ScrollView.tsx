@@ -1,14 +1,14 @@
-import type { ComponentProps } from "../Prop/ComponentProps"
-
 /* Props
 */
+import type { ComponentProps } from "../Prop/ComponentProps"
+
 type ScrollViewProps = ComponentProps
 
 /* Component
 */
 export const ScrollView: React.FC<ScrollViewProps> = (props) => {
     const {
-        component: Component,
+        component: Component = 'div',
         children,
         ...rest
     } = props
@@ -19,10 +19,9 @@ export const ScrollView: React.FC<ScrollViewProps> = (props) => {
                 overflow-x-scroll
             '
         >
-            <div
-            className='flex flex-nowrap
-            space-x-2
-            w-max
+            <div className='flex flex-nowrap
+                space-x-2
+                w-max
             '
             >
                 {children}

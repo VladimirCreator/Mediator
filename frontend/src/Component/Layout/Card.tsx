@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react'
 
-import type { ComponentProps } from '../Prop/ComponentProps'
-
 /* Props
 */
-export type CardProps = ComponentProps;
+import type { ComponentProps } from '../Prop/ComponentProps'
+
+type CardProps = ComponentProps
 
 /* Component
 */

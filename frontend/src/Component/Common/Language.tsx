@@ -1,11 +1,11 @@
-import { ComponentProps } from '../Prop/ComponentProps'
-
 /* Props
 */
+import { ComponentProps } from '../Prop/ComponentProps'
+
 export type LanguageProps = {
     language: string
     img: string
-    isSelected: boolean // Initially Modified: 11:30 AM Fri 06 Oct 2023
+    isSelected: boolean
 } & ComponentProps
 
 /* Component
