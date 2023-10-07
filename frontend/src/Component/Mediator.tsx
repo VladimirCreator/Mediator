@@ -4,8 +4,12 @@ import { WebAppProvider, MainButton } from '@vkruglikov/react-telegram-web-app'
 
 import { Main } from './Screen/Main';
 
-import type { MediatorProps } from './Prop/MediatorProp';
+/* Props
+*/
+type MediatorProps = {}
 
+/* Component
+*/
 export const Mediator: React.FC<MediatorProps> = () => {
     const [language, setLanguage] = useState<string|null>(null);
     const [recipe, setRecipe] = useState<string|null>(null);

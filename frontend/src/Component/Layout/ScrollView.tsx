@@ -1,5 +1,11 @@
-import { ScrollViewProps } from '../Prop/ScrollViewProps'
+import type { ComponentProps } from "../Prop/ComponentProp"
 
+/* Props
+*/
+type ScrollViewProps = ComponentProps
+
+/* Component
+*/
 export const ScrollView: React.FC<ScrollViewProps> = (props) => {
     const {
         component: Component,

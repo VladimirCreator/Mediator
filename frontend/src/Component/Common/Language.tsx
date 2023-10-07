@@ -1,5 +1,15 @@
-import { LanguageProps } from '../Prop/LanguageProps'
+import { ComponentProps } from '../Prop/ComponentProp'
 
+/* Props
+*/
+export type LanguageProps = {
+    language: string
+    img: string
+    isSelected: boolean // Initially Modified: 11:30 AM Fri 06 Oct 2023
+} & ComponentProps
+
+/* Component
+*/
 export const Language: React.FC<LanguageProps> = (props) => {
     const {
         language,

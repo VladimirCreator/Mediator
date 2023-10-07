@@ -1,10 +1,17 @@
 import { Root, Trigger, Content } from '@radix-ui/react-collapsible';
-
 import { UISwitch } from '../Control/UISwitch';
 
-import type { DisclosureProp } from '../Prop/DisclosureProp';
+import type { CollapsibleProps } from '@radix-ui/react-collapsible';
 
-export const Disclosure: React.FC<DisclosureProp> = (props) => {
+/* Props
+*/
+type DisclosureProps = {
+    label: string
+} & CollapsibleProps
+
+/* Component
+*/
+export const Disclosure: React.FC<DisclosureProps> = (props) => {
     const { children, label } = props;
 
     return (

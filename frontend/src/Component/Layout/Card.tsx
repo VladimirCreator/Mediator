@@ -1,8 +1,18 @@
 import React, { forwardRef } from 'react'
-import type { CardProps } from '../Prop/CardProp'
 
+import type { ComponentProps } from '../Prop/ComponentProp'
+
+/* Props
+*/
+export type CardProps = ComponentProps;
+
+/* Component
+*/
 export const Card: React.FC<CardProps> = (props) => {
-    const { component: Component = 'div', ...rest } = props
+    const {
+        component: Component = 'div',
+        ...rest
+    } = props
 
     return (
         <Component {...rest}
