@@ -1,5 +1,3 @@
-/* Last Modified: 10:45 AM Fri 06 Oct 2023
-*/
 /* interface React.JSX.IntrinsicElements {
        div: ...
    }

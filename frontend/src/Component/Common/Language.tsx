@@ -1,4 +1,4 @@
-import { ComponentProps } from '../Prop/ComponentProp'
+import { ComponentProps } from '../Prop/ComponentProps'
 
 /* Props
 */

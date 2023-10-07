@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { List } from '@radix-ui/react-tabs';
 
-import type { ComponentProps } from '../Prop/ComponentProp' // Initially Modified: 03:33 PM Sat 07 Oct 2023
+import type { ComponentProps } from '../Prop/ComponentProps' // Initially Modified: 03:33 PM Sat 07 Oct 2023
 
 /* Props
 */
