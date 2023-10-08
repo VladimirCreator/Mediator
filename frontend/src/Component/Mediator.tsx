@@ -25,7 +25,7 @@ export const Mediator: React.FC<MediatorProps> = () => {
 
         const recipe = {
             language,
-            text.replace(/^\s+/gm, ''),
+            text: text?.replace(/^\s+/gm, ''),
             arguments: theArguments,
             stdin
         }
