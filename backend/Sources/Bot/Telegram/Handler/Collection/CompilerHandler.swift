@@ -65,15 +65,6 @@ internal let compileHandler: TGBaseHandler = .init() { update, bot in
         try? await bot.sendMessage(params: params)
         return
     }
-    else {
-        let params: TGSendMessageParams = .init(
-            chatId: .chat(message.chat.id),
-            text: "Make sure your program is correct."
-        )
-
-        try? await bot.sendMessage(params: params)
-        return
-    }
 
     if let data = try? Process.run("./elf64", arguments: recipe.arguments, stdin: recipe.stdin),
        let stdout = String(data: data, encoding: .utf8)
@@ -83,6 +74,14 @@ internal let compileHandler: TGBaseHandler = .init() { update, bot in
         let params: TGSendMessageParams = .init(
             chatId: .chat(message.chat.id),
             text: "stdout:\n\(stdout)"
+        )
+
+        try? await bot.sendMessage(params: params)
+    }
+    else if !FileManager.default.fileExists(atPath: "./elf64") {
+        let params: TGSendMessageParams = .init(
+            chatId: .chat(message.chat.id),
+            text: "Make sure your program is correct."
         )
 
         try? await bot.sendMessage(params: params)
