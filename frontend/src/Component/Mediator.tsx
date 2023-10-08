@@ -1,33 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 import { WebAppProvider, MainButton } from '@vkruglikov/react-telegram-web-app'
+import { Main } from './Screen/Main'
 
-import { Main } from './Screen/Main';
+/* # Props
+*/
+type MediatorProps = unknown
 
-import type { MediatorProps } from './Prop/MediatorProp';
-
+/* # Component
+*/
 export const Mediator: React.FC<MediatorProps> = () => {
-    const [language, setLanguage] = useState<string|null>(null);
-    const [recipe, setRecipe] = useState<string|null>(null);
-    const [theArguments, setArguments] = useState<string|null>(null);
-    const [stdin, setStdin] = useState<string|null>(null);
+    const [language, setLanguage]      = useState<string|null>(null)
+    const [text, setText]          = useState<string|null>(null)
+    const [theArguments, setArguments] = useState<string|null>(null)
+    const [stdin, setStdin]            = useState<string|null>(null)
 
     const didSelectLanguage: boolean = language !== null
-    const didProvideRecipe: boolean = recipe !== null
+    const didProvideRecipe: boolean = text !== null
 
     // Может HTTP, а может не HTTP.
     const sendOverHTTP: () => void = () => {
         // @ts-expect-error
         const webApp = window.Telegram.WebApp
 
+        const recipe = {
+            language,
+            text,
+            arguments: theArguments,
+            stdin
+        }
+        const data = { data: recipe }
+
         webApp.sendData(
-            {
-                language,
-                recipe,
-                arguments: theArguments,
-                stdin
-            }
-        );
+            JSON.stringify(data)
+        )
     }
 
     useEffect(
@@ -35,21 +41,21 @@ export const Mediator: React.FC<MediatorProps> = () => {
             // @ts-expect-error
             const mainButton = window.Telegram.WebApp.MainButton
 
-            if (language === null || recipe === null) {
+            if (language === null || text === null) {
                 mainButton.hide()
                 return
             }
             mainButton.show()
         },
-        [language, recipe]
-    );
+        [language, text]
+    )
 
     return (
         <WebAppProvider children={
                 <>
                     <Main
                         onSelectLanguage={setLanguage}
-                        onChangeRecipe={setRecipe}
+                        onChangeRecipe={setText}
                         onChangeArguments={setArguments}
                         onChangeStdin={setStdin}
                     />
@@ -61,5 +67,5 @@ export const Mediator: React.FC<MediatorProps> = () => {
                 </>
             }
         />
-    );
+    )
 }

@@ -1,17 +1,20 @@
-import { useRef } from 'react';
-import { Disclosure } from '../Compound Control/Disclosure';
+import { useRef } from 'react'
+import { Disclosure } from '../Compound Control/Disclosure'
 
+/* Props
+*/
 type BetaProps = {
     onChangeArguments: (stdin: string) => void
 }
 
-// Perfectoinism kills me.
+/* Component
+*/
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC<BetaProps> = (props) => {
     const {
         onChangeArguments
     } = props
 
-    const inputRef: React.MutableRefObject<HTMLInputElement|null> = useRef(null);
+    const inputRef: React.MutableRefObject<HTMLInputElement|null> = useRef(null)
 
     return (
         <Disclosure label='arguments' className='space-y-2'
@@ -27,10 +30,10 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$2: React.FC<BetaProps> =
 
     function handleOpenChange(open: boolean) {
         if (open) {
-            inputRef.current?.focus();
+            inputRef.current?.focus()
         }
         else {
-            inputRef.current?.blur();
+            inputRef.current?.blur()
         }
     }
 }

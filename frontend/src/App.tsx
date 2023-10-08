@@ -1,5 +1,11 @@
 import { Mediator } from './Component/Mediator'
 
-export const App: React.FC = () => {
+/* Props
+*/
+type AppProps = unknown
+
+/* Component
+*/
+export const App: React.FC<AppProps> = () => {
     return <Mediator />
 }

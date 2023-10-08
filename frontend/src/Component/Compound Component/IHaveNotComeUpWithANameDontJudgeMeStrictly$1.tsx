@@ -2,11 +2,14 @@ import { Trigger, Content } from '@radix-ui/react-tabs'
 import { Picker } from '../Compound Control/Picker'
 import { SegmentedControl, Button } from '../Control/SegmentedControl'
 
+/* Props
+*/
 type BetaProps = {
     onChangeRecipe: (recipe: string) => void
 }
 
-// Perfectoinism kills me.
+/* Component
+*/
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$1: React.FC<BetaProps> = (props) => {
     const {
         onChangeRecipe
@@ -20,6 +23,7 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$1: React.FC<BetaProps> =
             defaultValue='text'
             list={
                 (props) => (
+                    // @ts-expect-error
                     <SegmentedControl {...props} />
                 )
             }
