@@ -15,6 +15,12 @@ fileprivate let package: Package = .init(
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "TelegramVaporBot", package: "telegram-vapor-bot")
             ]
+        ),
+        .testTarget(
+            name: "BotTests",
+            dependencies: [
+                .byName(name: "Bot")
+            ]
         )
     ]
 )
