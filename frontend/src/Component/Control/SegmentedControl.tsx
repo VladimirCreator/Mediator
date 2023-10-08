@@ -1,31 +1,31 @@
 import React, { forwardRef } from 'react'
-import { List } from '@radix-ui/react-tabs'
 
 /* Props
 */
+import type { TabsListProps } from '@radix-ui/react-tabs'
 import type { ComponentProps } from '../Prop/ComponentProps'
 
-type SegmentedControlProps = ComponentProps
+type ButtonProps = {
+    label: string
+}
+type SegmentedControlProps = ComponentProps & TabsListProps
 
-export const Button: React.FC<{ label: string }> = forwardRef(
-    (props, ref) => {
-        const { label } = props
+export const Button: React.FC<ButtonProps> = (props) => {
+    const { label } = props
 
-        return (
-            // @ts-expect-error
-            <button ref={ref} className='flex-1
+    return (
+        <button className='flex-1
                     data-[state=active]:text-white
                     data-[state=active]:bg-blue-500
                 '
-                type='button'
-                children={
-                    label.replace(/^./, label.charAt(0).toUpperCase())
-                }
-                {...props}
-            />
-        )
-    }
-)
+            type='button'
+            children={
+                label.replace(/^./, label.charAt(0).toUpperCase())
+            }
+            {...props}
+        />
+    )
+}
 
 /* Component
 */
@@ -36,6 +36,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = (props) => {
     } = props
 
     return (
+        // @ts-expect-error
         <Component {...rest}
             className='flex group\
                 text-blue-500\

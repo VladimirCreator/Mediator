@@ -23,6 +23,7 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$1: React.FC<BetaProps> =
             defaultValue='text'
             list={
                 (props) => (
+                    // @ts-expect-error
                     <SegmentedControl {...props} />
                 )
             }

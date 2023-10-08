@@ -1,19 +1,16 @@
 /* Props
 */
-import { ComponentProps } from '../Prop/ComponentProps'
-
-export type LanguageProps = {
+type LanguageProps = {
     language: string
-    img: string
     isSelected: boolean
-} & ComponentProps
+    onClick: () => void
+}
 
 /* Component
 */
 export const Language: React.FC<LanguageProps> = (props) => {
     const {
         language,
-        img,
         isSelected,
         ...rest
     } = props

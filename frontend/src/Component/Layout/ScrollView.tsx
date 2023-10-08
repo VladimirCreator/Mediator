@@ -14,6 +14,7 @@ export const ScrollView: React.FC<ScrollViewProps> = (props) => {
     } = props
 
     return (
+        // @ts-expect-error
         <Component {...rest}
             className='overflow-hidden
                 overflow-x-scroll

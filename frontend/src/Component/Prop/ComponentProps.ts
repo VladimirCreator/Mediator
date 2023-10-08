@@ -1,13 +1,10 @@
-/* interface React.JSX.IntrinsicElements {
-       div: ...
-   }
-*/
+type ComponentOwnProps<T> = T extends infer IntrinsicElement ?
+    IntrinsicElement extends keyof React.JSX.IntrinsicElements ? {
+        readonly component: IntrinsicElement
+    } : {
 
-type ComponentOwnProps<
-    IntrinsicElement extends keyof React.JSX.IntrinsicElements
-> = {
-    readonly component?: IntrinsicElement
-}
+    }
+: never
 
 type ComponentPropsBuilder<
     IntrinsicElement extends keyof React.JSX.IntrinsicElements,
@@ -17,7 +14,7 @@ type ComponentPropsBuilder<
 }
 
 export type ComponentProps = {
-    [IntrinsicElement in keyof React.JSX.IntrinsicElements]:
-        ComponentOwnProps<IntrinsicElement> &
-        ComponentPropsBuilder<IntrinsicElement>
-}[keyof React.JSX.IntrinsicElements]
+        [IntrinsicElement in keyof React.JSX.IntrinsicElements]:
+            ComponentOwnProps<IntrinsicElement> &
+            ComponentPropsBuilder<IntrinsicElement>
+    }[keyof React.JSX.IntrinsicElements]
