@@ -10,6 +10,7 @@ RUN apt install g++ -y && \
 
 COPY Package.swift    \
      Package.resolved \
+     .env             \
      .
 RUN swift package resolve
 
