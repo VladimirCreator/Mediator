@@ -46,15 +46,15 @@ $ docker compose up --detach
 ```
 
 ## Backend
+> **Pay Attention**\
+> It is required to specify the bot's token and the location of mini app to get this work.\
+> See [Getting Started](#getting-started)
+
 Dockerfile installs all required dependecies like `g++`[^1], `swiftc`[^2], and `bun`[^3].
 
 [^1]: Makes possible to compile C++ files.
 [^2]: Makes possible to compile Swift files.
 [^3]: Makes possible to interpret JavaScript and TypeScript files.
-
-> **Pay Attention**\
-> For the normal operation of this part of the software, it is required to specify the bot token and the location of mini app.\
-> This can be done by changing `.env`.
 
 ### Build
 ```
