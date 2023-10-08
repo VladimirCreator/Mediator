@@ -17,10 +17,10 @@ export const IHaveNotComeUpWithANameDontJudgeMeStrictly$3: React.FC<BetaProps> =
     const inputRef: React.MutableRefObject<HTMLInputElement|null> = useRef(null)
 
     return (
-        <Disclosure label='stdin' className='space-y-2'
+        <Disclosure label='stdin' className='dark:text-white space-y-2'
             onOpenChange={handleOpenChange}
             children={
-                <input ref={inputRef} className='w-full bg-slate-200 font-mono p-2 rounded'
+                <input ref={inputRef} className='w-full dark:text-white bg-slate-200 font-mono dark:bg-neutral-800 p-2 rounded'
                     type='text'
                     onChange={(event) => onChangeStdin(event.target.value)}
                 />

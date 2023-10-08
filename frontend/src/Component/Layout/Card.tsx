@@ -17,7 +17,9 @@ export const Card: React.FC<CardProps> = (props) => {
     return (
         // @ts-expect-error
         <Component {...rest}
-            className='p-4 bg-white rounded-xl'
+            className='p-4
+                bg-white dark:bg-black rounded-xl
+            '
         />
     )
 }

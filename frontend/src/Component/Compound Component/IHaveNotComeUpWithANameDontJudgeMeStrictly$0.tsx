@@ -15,20 +15,17 @@ const languages = [
     },
     {
         language: 'TypeScript',
-    },
-    {
-        language: 'Python',
-    },
-    {
-        language: 'Java',
     }
 ] as const
 
+/* Props
+*/
 type BetaProps = {
     onSelectLanguage: (language: string) => void
 }
 
-// Perfectoinism kills me.
+/* Component
+*/
 export const IHaveNotComeUpWithANameDontJudgeMeStrictly$0: React.FC<BetaProps> = (props) => {
     const { onSelectLanguage } = props
     const [selectedLanguage, setSelectedLanguage] = useState('')

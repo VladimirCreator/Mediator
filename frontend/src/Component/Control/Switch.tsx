@@ -36,10 +36,14 @@ export const Switch: React.FC<SwitchProps> = (props) => {
                 rounded-full
 
                 data-[state=unchecked]:bg-neutral-200
+                dark:data-[state=unchecked]:bg-neutral-600
                 data-[state=closed]:bg-neutral-200
+                dark:data-[state=closed]:bg-neutral-600
 
                 data-[state=checked]:bg-green-500
+                dark:data-[state=checked]:bg-green-600
                 data-[state=open]:bg-green-500
+                dark:data-[state=open]:bg-green-600
 
                 focus-visible:outline-0 focus-visible:-translate-y-2
                 duration-150
