@@ -12,6 +12,9 @@
 - [Frontend](#frontend)
     - [Build]()
     - [Docker]()
+- [Aspects to Improve](#aspects-to-improve)
+    - [Backend]()
+    - [Frontend]()
 
 ## About
 This bot accepts as input these properties from a user:
@@ -68,6 +71,7 @@ $ docker run --publish 8080:80 \
 > This Dockerfile is probably the worst Dockerfile.
 
 ## Frontend
+
 ### Build
 ```
 $ npm install
@@ -82,5 +86,16 @@ docker run --publish 8080:80            \
     --name $USER                        \
     nginx
 ```
+
+## Aspects to Improve
+
+### Backend
+1. Use a database;
+1. Fetch `info` from the database;
+1. Dockerfile.
+
+### Frontend
+1. Fetch `languages` from the backend;
+1. The `/admin` route where I can mutate the database.
 
 [//]: <> (backend, backend-docker, frontend, frontend-docker, frontene-stdin-autofocus, master, master-development, docker-edits)
