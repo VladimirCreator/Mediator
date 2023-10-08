@@ -1,10 +1,5 @@
 import { Fragment } from 'react'
-import {
-    Root,
-    List,
-    Trigger,
-    Content
-} from '@radix-ui/react-tabs'
+import { Root, List, Trigger, Content } from '@radix-ui/react-tabs'
 
 
 /* Props
@@ -41,7 +36,7 @@ export const Picker: <const Array extends readonly string[]>(prop: PickerProp<Ar
 
     return (
         <Root onValueChange={onValueChange}
-            className='space-y-2'
+            className='space-y-2.5'
         >
 
             {

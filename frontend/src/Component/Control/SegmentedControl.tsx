@@ -17,9 +17,10 @@ export const Button: React.FC<ButtonProps> = forwardRef(
 
         return (
             <button className='flex-1
-                        data-[state=active]:text-white
-                        data-[state=active]:bg-blue-500
-                    '
+                    py-1.5
+                    data-[state=active]:text-white
+                    data-[state=active]:bg-blue-500 dark:data-[state=active]:bg-blue-600
+                '
                 type='button'
                 // @ts-expect-error
                 ref={ref}
@@ -43,12 +44,12 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = (props) => {
     return (
         // @ts-expect-error
         <List {...rest}
-            className='flex group
-                text-blue-500
-                border border-solid border-blue-500
-                divide-x divide-solid divide-blue-500
+            className='group flex overflow-hidden
+                text-blue-500 dark:text-blue-600
 
-                rounded-md
+                border border-solid border-blue-500 dark:border-blue-600
+                divide-x divide-solid divide-blue-500 dark:divide-blue-600
+                rounded-lg
             '
         />
     )
