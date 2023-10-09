@@ -16,6 +16,8 @@ RUN swift package resolve
 
 COPY Sources \
      Sources
+RUN mkdir Tests \
+          Tests/BotTests
 
 RUN swift build -c release
 #
