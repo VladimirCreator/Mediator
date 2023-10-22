@@ -1,6 +1,7 @@
 # Mediator
 
 ## Table of Contents
+- [Description](#description)
 - [About](#about)
 - [Getting Started](#getting-started)
     - [Clone](#1-clone)
@@ -16,6 +17,9 @@
 - [Aspects to Improve](#aspects-to-improve)
     - [Backend]()
     - [Frontend]()
+
+## Description
+Run g++, swiftc, and bun from your pocket!
 
 ## About
 This bot accepts as input these properties from a user:
