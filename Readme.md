@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Description](#description)
 - [About](#about)
+- [Results](#results)
 - [Getting Started](#getting-started)
     - [Clone](#1-clone)
     - [Prepare .env](#2-prepare-env)
@@ -30,6 +31,11 @@ This bot accepts as input these properties from a user:
 1. stdin (e.g. `vladimir`).
 
 It processes these properties and sends back output of a program to the user.
+
+## Results
+I can’t believe I am not even in the winners list.
+
+![My submission.](raw/IMG_1686.png)
 
 ## Getting Started
 
