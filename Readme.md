@@ -20,7 +20,7 @@
     - [Frontend]()
 
 ## Description
-Run g++, swiftc, and bun from your pocket!
+Run g++, swiftc, and bun from Telegram!
 
 ## About
 This bot accepts as input these properties from a user:
