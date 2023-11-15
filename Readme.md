@@ -57,9 +57,9 @@ $ docker compose up --detach
 ```
 
 ## Backend
-> **Pay Attention**\
+> [!NOTE]
 > It is required to specify the bot's token and the location of mini app to get this work.\
-> See [Getting Started](#getting-started)
+> See [Getting Started](#getting-started) for more information.
 
 Dockerfile installs all required dependecies like `g++`[^1], `swiftc`[^2], and `bun`[^3].
 
