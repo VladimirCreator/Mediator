@@ -8,10 +8,6 @@ import { App } from './App.tsx'
 const root = document.querySelector('form#root') as HTMLFormElement
 
 ReactDOM.createRoot(root)
-    .render(
-        <React.StrictMode
-            children={
-                <App />
-            }
-        />
-    )
+	.render(
+		<React.StrictMode children={ <App /> } />
+	)

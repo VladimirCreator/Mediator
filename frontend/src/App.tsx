@@ -7,5 +7,5 @@ type AppProps = unknown
 /* Component
 */
 export const App: React.FC<AppProps> = () => {
-    return <Mediator />
+	return <Mediator />
 }

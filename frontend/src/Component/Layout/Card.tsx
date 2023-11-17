@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 /* Props
 */
@@ -9,17 +9,13 @@ type CardProps = ComponentProps
 /* Component
 */
 export const Card: React.FC<CardProps> = (props) => {
-    const {
-        component: Component = 'div',
-        ...rest
-    } = props
+	const { component: Component = 'div', ...rest } = props
 
-    return (
-        // @ts-expect-error
-        <Component {...rest}
-            className='p-4
-                bg-white dark:bg-black rounded-xl
-            '
-        />
-    )
+	return (
+		// @ts-expect-error
+		<Component {...rest} className='p-4 bg-white dark:bg-black
+				rounded-xl
+			'
+		/>
+	)
 }

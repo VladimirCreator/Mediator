@@ -2,17 +2,15 @@ import Vapor
 import TelegramVaporBot
 
 internal final class TelegramController: RouteCollection {
-    internal func boot(routes: RoutesBuilder) throws {
-        routes.post("telegramWebHook", use: telegramWebHook)
-    }
+	internal func boot(routes: RoutesBuilder) throws {
+		routes.post("telegramWebHook", use: telegramWebHook)
+	}
 }
 
 internal extension TelegramController {
-    internal func telegramWebHook(_ request: Request) async throws -> Bool {
-        let update: TGUpdate = try request.content.decode(TGUpdate.self)
+	internal func telegramWebHook(_ request: Request) async throws -> Bool {
+		let update: TGUpdate = try request.content.decode(TGUpdate.self)
 
-        return try await botConnection.connection.dispatcher.process(
-            [update]
-        )
-    }
+		return try await botConnection.connection.dispatcher.process([update])
+	}
 }

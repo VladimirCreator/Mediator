@@ -6,28 +6,23 @@ internal let botConnection: TGBotConnection = .init()
 
 @main
 fileprivate enum Entrypoint {
-    fileprivate static func main() async throws -> Void {
-        let application: Application = try .init(.detect()); defer { application.shutdown() }
+	fileprivate static func main() async throws -> Void {
+		let application: Application = try .init(.detect()); defer { application.shutdown() }
 
-        try await configure(application)
-        try await application.runFromAsyncMainEntrypoint()
-    }
+		try await configure(application)
+		try await application.runFromAsyncMainEntrypoint()
+	}
 }
 
 private extension Application {
-    static let baseExecutionQueue = DispatchQueue(label: "vapor.codes.entrypoint")
+	static let baseExecutionQueue = DispatchQueue(label: "vapor.codes.entrypoint")
 
-    fileprivate func runFromAsyncMainEntrypoint() async throws {
-        return try await withCheckedThrowingContinuation { continuation in
-            Application.baseExecutionQueue.async { [self] in
-                do {
-                    try self.run()
-                    continuation.resume()
-                }
-                catch {
-                    continuation.resume(throwing: error)
-                }
-            }
-        }
-    }
+	fileprivate func runFromAsyncMainEntrypoint() async throws {
+		return try await withCheckedThrowingContinuation { continuation in
+			Application.baseExecutionQueue.async { [self] in
+				do { try self.run(); continuation.resume() }
+				catch { continuation.resume(throwing: error) }
+			}
+		}
+	}
 }

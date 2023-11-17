@@ -5,19 +5,19 @@
 - [About](#about)
 - [Results](#results)
 - [Getting Started](#getting-started)
-    - [Clone](#1-clone)
-    - [Prepare .env](#2-prepare-env)
-    - [Docker](#docker)
+	- [Clone](#1-clone)
+	- [Prepare .env](#2-prepare-env)
+	- [Docker](#docker)
 - [Backend](#backend)
-    - [Build]()
-    - [Docker]()
+	- [Build]()
+	- [Docker]()
 - [Frontend](#frontend)
-    - [Build]()
-    - [Docker]()
+	- [Build]()
+	- [Docker]()
 - [User Guide](#user-guide)
 - [Aspects to Improve](#aspects-to-improve)
-    - [Backend]()
-    - [Frontend]()
+	- [Backend]()
+	- [Frontend]()
 
 ## Description
 Run g++, swiftc, and bun from Telegram!
@@ -40,9 +40,8 @@ I can’t believe I am not even in the winners list.
 ## Getting Started
 
 ### 1. Clone
-```
-$ git clone \
-    https://github.com/VladimirCreator/compiler_bot.git
+```sh
+$ git clone https://github.com/VladimirCreator/compiler_bot.git
 ```
 
 ### 2. Prepare .env
@@ -52,7 +51,7 @@ IHaveNotComeUpWithAName=<YOUR_MINI_APPS_URL>
 ```
 
 ### 3. Docker
-```
+```sh
 $ docker compose up --detach
 ```
 
@@ -68,34 +67,34 @@ Dockerfile installs all required dependecies like `g++`[^1], `swiftc`[^2], and `
 [^3]: Makes possible to interpret JavaScript and TypeScript files.
 
 ### Build
-```
+```sh
 $ swift build --configuration release
 ```
 
 ### Docker
-```
+```sh
 $ docker run --publish 8080:80 \
-             --detach          \
-             --name $USER)
+						 --detach          \
+						 --name $USER
 ```
+
 > **Pay Attention**\
 > This Dockerfile is probably the worst Dockerfile.
 
 ## Frontend
 
 ### Build
-```
-$ npm install
-$ npm build
+```sh
+$ npm install; npm build
 ```
 
 ### Docker
-```
+```sh
 docker run --publish 8080:80            \
-    --volume dist:/usr/share/nginx/html:ro \
-    --detach                            \
-    --name $USER                        \
-    nginx
+	--volume dist:/usr/share/nginx/html:ro \
+	--detach                            \
+	--name $USER                        \
+	nginx
 ```
 
 ## User Guide
