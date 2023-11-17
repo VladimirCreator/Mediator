@@ -1,11 +1,9 @@
-# Initially Modified at 5:55 AM on Fri 17 Nov 2023
-#      Last Modified at 6:06 AM on Fri 17 Nov 2023
 name: GitHub Pages
 run-name: ${{ github.actor }} ran this workflow
 
 on: workflow_dispatch
 
-defaults: # --amend at 6:11 AM on Fri 17 Nov 2023
+defaults:
   run:
       working-directory: frontend
 
