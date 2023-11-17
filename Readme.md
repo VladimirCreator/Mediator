@@ -35,27 +35,31 @@ It processes these properties and sends back output of a program to the user.
 ## Results
 I can’t believe I am not even in the winners list.
 
-![My submission.](raw/IMG_1686.png)
+![Vladimir’s submission](raw/IMG_1686.png)
 
 ## Getting Started
 
 ### 1. Clone
-```sh
+
+```bash
 $ git clone https://github.com/VladimirCreator/compiler_bot.git
 ```
 
 ### 2. Prepare .env
+
 ```
 COMPILER_BOT_TOKEN=<YOUR_BOTS_TOKEN>
 IHaveNotComeUpWithAName=<YOUR_MINI_APPS_URL>
 ```
 
 ### 3. Docker
-```sh
+
+```bash
 $ docker compose up --detach
 ```
 
 ## Backend
+
 > [!NOTE]
 > It is required to specify the bot's token and the location of mini app to get this work.\
 > See [Getting Started](#getting-started) for more information.
@@ -67,34 +71,31 @@ Dockerfile installs all required dependecies like `g++`[^1], `swiftc`[^2], and `
 [^3]: Makes possible to interpret JavaScript and TypeScript files.
 
 ### Build
-```sh
+
+```bash
 $ swift build --configuration release
 ```
 
 ### Docker
-```sh
-$ docker run --publish 8080:80 \
-						 --detach          \
-						 --name $USER
-```
 
-> **Pay Attention**\
-> This Dockerfile is probably the worst Dockerfile.
+```bash
+$ docker run --detach --publish 8080:80
+```
 
 ## Frontend
 
 ### Build
-```sh
+
+```bash
 $ npm install; npm build
 ```
 
 ### Docker
-```sh
-docker run --publish 8080:80            \
-	--volume dist:/usr/share/nginx/html:ro \
-	--detach                            \
-	--name $USER                        \
-	nginx
+
+```bash
+docker run --detach --publish 8080:80
+  --volume dist:/usr/share/nginx/html:ro
+  nginx
 ```
 
 ## User Guide
