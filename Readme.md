@@ -22,6 +22,9 @@
 ## Description
 Run g++, swiftc, and bun from Telegram!
 
+### Topics
+swift vapor typescript react docker
+
 ## About
 This bot accepts as input these properties from a user:
 
@@ -60,7 +63,7 @@ $ docker compose up --detach
 
 ## Backend
 
-> [!NOTE]
+> [!IMPORTANT]
 > It is required to specify the bot's token and the location of mini app to get this work.\
 > See [Getting Started](#getting-started) for more information.
 
